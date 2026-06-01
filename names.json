@@ -1,0 +1,5373 @@
+[
+  {
+    "name": "אביב",
+    "meaning": "עונת האביב",
+    "traits": [
+      "רענן",
+      "מחדש"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "אביגיל",
+    "meaning": "אב שמח",
+    "traits": [
+      "חכמה",
+      "אמיצה"
+    ],
+    "sign": [
+      10,
+      11,
+      12
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "אביגל",
+    "meaning": "אביגיל — אב שמח",
+    "traits": [
+      "שמחה",
+      "מאירה"
+    ],
+    "sign": [
+      6,
+      7,
+      8
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "אביה",
+    "meaning": "אבי ה׳",
+    "traits": [
+      "עמוקה",
+      "שקטה"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "אביטוב",
+    "meaning": "אב טוב",
+    "traits": [
+      "טובה",
+      "נדיבה"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "אביטל",
+    "meaning": "אבי טל",
+    "traits": [
+      "עדינה",
+      "טהורה"
+    ],
+    "sign": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "sources": true,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "אבנר",
+    "meaning": "אבי הנר, אור האב",
+    "traits": [
+      "חכם",
+      "מאיר"
+    ],
+    "sign": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "אברהם",
+    "meaning": "אב המון גויים",
+    "traits": [
+      "חלוצי",
+      "שורשי"
+    ],
+    "sign": [
+      9,
+      10,
+      1,
+      2
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "אגם",
+    "meaning": "אגם, אגן מים",
+    "traits": [
+      "שקט",
+      "עמוק"
+    ],
+    "sign": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "אדם",
+    "meaning": "האדמה",
+    "traits": [
+      "ראשוני",
+      "שורשי"
+    ],
+    "sign": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "sources": true,
+    "international": true,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "אדר",
+    "meaning": "חודש אדר",
+    "traits": [
+      "מורכב",
+      "שמח"
+    ],
+    "sign": [
+      2,
+      3
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "אהרון",
+    "meaning": "הר האור",
+    "traits": [
+      "מקשר",
+      "חם"
+    ],
+    "sign": [
+      2,
+      3,
+      4
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "אופיר",
+    "meaning": "ארץ הזהב",
+    "traits": [
+      "חולם",
+      "מיוחד"
+    ],
+    "sign": [
+      11,
+      12,
+      1
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "אופק",
+    "meaning": "האופק",
+    "traits": [
+      "חולם",
+      "ממוקד"
+    ],
+    "sign": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "אור",
+    "meaning": "אור",
+    "traits": [
+      "מאיר",
+      "חיובי"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "אורה",
+    "meaning": "אורה ואור",
+    "traits": [
+      "מאירה",
+      "חמה"
+    ],
+    "sign": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "אורי",
+    "meaning": "אורי — האור שלי",
+    "traits": [
+      "מאיר",
+      "אישי"
+    ],
+    "sign": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "אוריאל",
+    "meaning": "אור האל",
+    "traits": [
+      "רוחני",
+      "מאיר"
+    ],
+    "sign": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "אורית",
+    "meaning": "אור",
+    "traits": [
+      "מאירה",
+      "חדה"
+    ],
+    "sign": [
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "אורלי",
+    "meaning": "אורי לי",
+    "traits": [
+      "מאירה",
+      "שמחה"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "אורן",
+    "meaning": "עץ אורן",
+    "traits": [
+      "יציב",
+      "ירוק"
+    ],
+    "sign": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "אורנה",
+    "meaning": "אורן / אור",
+    "traits": [
+      "מאירה",
+      "שורשית"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "אורנית",
+    "meaning": "עץ האורן",
+    "traits": [
+      "עקשנית",
+      "ירוקה"
+    ],
+    "sign": [
+      10,
+      11,
+      12,
+      1
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "אחאב",
+    "meaning": "אח + אב",
+    "traits": [
+      "חזק",
+      "מורכב"
+    ],
+    "sign": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "אחיה",
+    "meaning": "אח לה׳",
+    "traits": [
+      "רוחני",
+      "חם"
+    ],
+    "sign": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "אחינועם",
+    "meaning": "אחי נועם",
+    "traits": [
+      "שלווה",
+      "נעימה"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "איה",
+    "meaning": "עוף דורס",
+    "traits": [
+      "עצמאית",
+      "חדה"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "אירית",
+    "meaning": "עפר, אדמה",
+    "traits": [
+      "שורשית",
+      "חמה"
+    ],
+    "sign": [
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "איתי",
+    "meaning": "איתן, חזק",
+    "traits": [
+      "יציב",
+      "אמין"
+    ],
+    "sign": [
+      1,
+      2,
+      10,
+      11
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "אלה",
+    "meaning": "עץ אלה",
+    "traits": [
+      "שורשית",
+      "עדינה"
+    ],
+    "sign": [
+      10,
+      11,
+      12
+    ],
+    "sources": false,
+    "international": true,
+    "nature": true,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "אלון",
+    "meaning": "עץ אלון",
+    "traits": [
+      "יציב",
+      "טבעי"
+    ],
+    "sign": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "אלי",
+    "meaning": "האל שלי",
+    "traits": [
+      "פשוט",
+      "אמיתי"
+    ],
+    "sign": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "sources": false,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "אליהו",
+    "meaning": "ה׳ הוא אלוהים",
+    "traits": [
+      "נלהב",
+      "בוער"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "אלישבע",
+    "meaning": "אלי שבע / שבועה",
+    "traits": [
+      "עקשנית",
+      "נאמנת"
+    ],
+    "sign": [
+      5,
+      6,
+      7
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "אלמה",
+    "meaning": "עלמה, נסתר",
+    "traits": [
+      "מסתורית",
+      "עמוקה"
+    ],
+    "sign": [
+      2,
+      3,
+      4,
+      12
+    ],
+    "sources": false,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "אלמוג",
+    "meaning": "אלמוג ים",
+    "traits": [
+      "ייחודי",
+      "יפה"
+    ],
+    "sign": [
+      6,
+      7,
+      8
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "אלנה",
+    "meaning": "אורה, אלנה",
+    "traits": [
+      "מאירה",
+      "חמה"
+    ],
+    "sign": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "sources": false,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "אמיחי",
+    "meaning": "עמי חי",
+    "traits": [
+      "עממי",
+      "חי"
+    ],
+    "sign": [
+      6,
+      7,
+      8
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "אמיר",
+    "meaning": "ענף, נסיך",
+    "traits": [
+      "אצילי",
+      "חם"
+    ],
+    "sign": [
+      1,
+      2,
+      3,
+      12
+    ],
+    "sources": false,
+    "international": true,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "אנה",
+    "meaning": "חן",
+    "traits": [
+      "עדינה",
+      "פשוטה"
+    ],
+    "sign": [
+      2,
+      3,
+      4
+    ],
+    "sources": false,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "אסנת",
+    "meaning": "שייכת לנאית",
+    "traits": [
+      "ייחודית",
+      "שורשית"
+    ],
+    "sign": [
+      2,
+      3,
+      4
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "אסף",
+    "meaning": "אסף ורכז",
+    "traits": [
+      "מקבץ",
+      "חם"
+    ],
+    "sign": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "אסתר",
+    "meaning": "כוכב / נסתר",
+    "traits": [
+      "מסתורית",
+      "אמיצה"
+    ],
+    "sign": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "אפיק",
+    "meaning": "אפיק נחל",
+    "traits": [
+      "ממוקד",
+      "זורם"
+    ],
+    "sign": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "אפק",
+    "meaning": "אופק",
+    "traits": [
+      "חולמת",
+      "רחוקת ראייה"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "אפרסם",
+    "meaning": "ריח הבשמים",
+    "traits": [
+      "חושנית",
+      "ייחודית"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "אפרת",
+    "meaning": "עפרה, מקום פורה",
+    "traits": [
+      "עתיקה",
+      "רעננה"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "ארז",
+    "meaning": "עץ הארז",
+    "traits": [
+      "חזק",
+      "שורשי"
+    ],
+    "sign": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "אריאל",
+    "meaning": "ארי האל",
+    "traits": [
+      "חזק",
+      "אצילי"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": false,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "אשל",
+    "meaning": "עץ האשל",
+    "traits": [
+      "שורשי",
+      "פשוט"
+    ],
+    "sign": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "sources": true,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "אשר",
+    "meaning": "אשרי ומאושר",
+    "traits": [
+      "מאושר",
+      "קליל"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "בועז",
+    "meaning": "כוח ועוז",
+    "traits": [
+      "נדיב",
+      "יציב"
+    ],
+    "sign": [
+      5,
+      6,
+      7
+    ],
+    "sources": true,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "בינה",
+    "meaning": "הבנה ובינה",
+    "traits": [
+      "חכמה",
+      "שקטה"
+    ],
+    "sign": [
+      8,
+      9,
+      10
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "ביתן",
+    "meaning": "בית, מחסה",
+    "traits": [
+      "בונה",
+      "מגן"
+    ],
+    "sign": [
+      11,
+      12,
+      1
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "בנימין",
+    "meaning": "בן ימין",
+    "traits": [
+      "חביב",
+      "מיוחד"
+    ],
+    "sign": [
+      12,
+      1,
+      2
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "בצלאל",
+    "meaning": "בצל אל",
+    "traits": [
+      "יצירתי",
+      "מיוחד"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "בר",
+    "meaning": "שדה פתוח",
+    "traits": [
+      "חופשי",
+      "פרוע"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "ברכה",
+    "meaning": "ברכה",
+    "traits": [
+      "מברכת",
+      "חמה"
+    ],
+    "sign": [
+      12,
+      1,
+      2
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "ברק",
+    "meaning": "ברק ואש",
+    "traits": [
+      "מהיר",
+      "חד"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "בשמת",
+    "meaning": "ריחנית, בשמים",
+    "traits": [
+      "בלתי נשכחת",
+      "חושנית"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": true,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "בת אל",
+    "meaning": "בת האל",
+    "traits": [
+      "רוחנית",
+      "מיוחדת"
+    ],
+    "sign": [
+      1,
+      2,
+      3
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "בת שבע",
+    "meaning": "בת שבע",
+    "traits": [
+      "מלכותית",
+      "חמה"
+    ],
+    "sign": [
+      12,
+      1,
+      2
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "גאולה",
+    "meaning": "גאולה וחרות",
+    "traits": [
+      "תקווה",
+      "חופש"
+    ],
+    "sign": [
+      11,
+      12,
+      1
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "גבריאל",
+    "meaning": "גיבור האל",
+    "traits": [
+      "אמיץ",
+      "נשגב"
+    ],
+    "sign": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "sources": false,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "גדעון",
+    "meaning": "גדע, כרת",
+    "traits": [
+      "אסטרטג",
+      "אמיץ"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "גיל",
+    "meaning": "שמחה",
+    "traits": [
+      "שמח",
+      "קליל"
+    ],
+    "sign": [
+      1,
+      2,
+      11,
+      12
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "גל",
+    "meaning": "גל ים",
+    "traits": [
+      "דינמי",
+      "חופשי"
+    ],
+    "sign": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "גלעד",
+    "meaning": "גל + עד",
+    "traits": [
+      "ניצב",
+      "בולט"
+    ],
+    "sign": [
+      8,
+      9,
+      10
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "גנת",
+    "meaning": "גן, גינה",
+    "traits": [
+      "פורחת",
+      "חיה"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "גפן",
+    "meaning": "גפן יין",
+    "traits": [
+      "יצירתי",
+      "גמיש"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "דבורה",
+    "meaning": "דבורה",
+    "traits": [
+      "מנהיגה",
+      "חכמה"
+    ],
+    "sign": [
+      6,
+      7,
+      8
+    ],
+    "sources": true,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "דוד",
+    "meaning": "אהוב",
+    "traits": [
+      "יצירתי",
+      "אמיץ"
+    ],
+    "sign": [
+      3,
+      4,
+      10,
+      11
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "דור",
+    "meaning": "דור חדש",
+    "traits": [
+      "קדימה",
+      "מחדש"
+    ],
+    "sign": [
+      6,
+      7,
+      8
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "דינה",
+    "meaning": "דין ומשפט",
+    "traits": [
+      "הוגנת",
+      "ישרה"
+    ],
+    "sign": [
+      6,
+      7,
+      8
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "דליה",
+    "meaning": "ענף דולה",
+    "traits": [
+      "גמישה",
+      "עמידה"
+    ],
+    "sign": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "דנה",
+    "meaning": "שפטה",
+    "traits": [
+      "חכמה",
+      "ברורה"
+    ],
+    "sign": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "דניאל",
+    "meaning": "ה׳ שופטי",
+    "traits": [
+      "חכם",
+      "אמיץ"
+    ],
+    "sign": [
+      1,
+      2,
+      10,
+      11
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "דעת",
+    "meaning": "דעת וחכמה",
+    "traits": [
+      "חכמה",
+      "חדה"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "דקלה",
+    "meaning": "עץ דקל",
+    "traits": [
+      "ישראלית",
+      "עמידה"
+    ],
+    "sign": [
+      6,
+      7,
+      8
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "דרור",
+    "meaning": "חרות, ציפור",
+    "traits": [
+      "חופשי",
+      "עצמאי"
+    ],
+    "sign": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "הדס",
+    "meaning": "הדס",
+    "traits": [
+      "מתמידה",
+      "עדינה"
+    ],
+    "sign": [
+      10,
+      11,
+      12
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "הדר",
+    "meaning": "הוד ויופי",
+    "traits": [
+      "אצילית",
+      "טבעית"
+    ],
+    "sign": [
+      1,
+      2,
+      11,
+      12
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "ורד",
+    "meaning": "פרח ורד",
+    "traits": [
+      "יפה",
+      "חזקה"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "זבולון",
+    "meaning": "זבול, מגורים",
+    "traits": [
+      "פתוח",
+      "גבולי"
+    ],
+    "sign": [
+      6,
+      7,
+      8
+    ],
+    "sources": true,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "זהבה",
+    "meaning": "זהב",
+    "traits": [
+      "יקרה",
+      "זוהרת"
+    ],
+    "sign": [
+      1,
+      2,
+      3
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "זהר",
+    "meaning": "זוהר ואור",
+    "traits": [
+      "זוהרת",
+      "טבעית"
+    ],
+    "sign": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "זיו",
+    "meaning": "זוהר ואור",
+    "traits": [
+      "זוהר",
+      "קליל"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "זיוה",
+    "meaning": "זוהר",
+    "traits": [
+      "זוהרת",
+      "טבעית"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "זמורה",
+    "meaning": "ענף גפן",
+    "traits": [
+      "גמישה",
+      "פורחת"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "זמיר",
+    "meaning": "זמיר — ציפור שיר",
+    "traits": [
+      "מוסיקלי",
+      "חופשי"
+    ],
+    "sign": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "חגי",
+    "meaning": "חג ושמחה",
+    "traits": [
+      "מעשי",
+      "שמח"
+    ],
+    "sign": [
+      12,
+      1,
+      2
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "חולדה",
+    "meaning": "נביאה",
+    "traits": [
+      "חכמה",
+      "קשובה"
+    ],
+    "sign": [
+      8,
+      9,
+      10
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "חמד",
+    "meaning": "חמד, נחמד",
+    "traits": [
+      "חביב",
+      "טבעי"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "חמדה",
+    "meaning": "חמד, יקר",
+    "traits": [
+      "יקרה",
+      "חמה"
+    ],
+    "sign": [
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "חמי",
+    "meaning": "חם, חמי",
+    "traits": [
+      "חם",
+      "קרוב"
+    ],
+    "sign": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "חן",
+    "meaning": "חן וחסד",
+    "traits": [
+      "חנון",
+      "קליל"
+    ],
+    "sign": [
+      2,
+      3,
+      4
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "חנה",
+    "meaning": "חן וחסד",
+    "traits": [
+      "חנונה",
+      "רגישה"
+    ],
+    "sign": [
+      2,
+      3,
+      4
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "חנוך",
+    "meaning": "חינוך, חנוך",
+    "traits": [
+      "מסתורי",
+      "חכם"
+    ],
+    "sign": [
+      5,
+      6,
+      7
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "טובה",
+    "meaning": "טובה",
+    "traits": [
+      "טובה",
+      "עמוקה"
+    ],
+    "sign": [
+      10,
+      11,
+      12
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "טוהר",
+    "meaning": "טהרה וניקיון",
+    "traits": [
+      "טהור",
+      "ישיר"
+    ],
+    "sign": [
+      1,
+      2,
+      3,
+      12
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "טל",
+    "meaning": "טל הבוקר",
+    "traits": [
+      "עדין",
+      "מחיה"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "ידיד",
+    "meaning": "חבר אמת",
+    "traits": [
+      "נאמן",
+      "חברותי"
+    ],
+    "sign": [
+      2,
+      3,
+      4
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "יהודה",
+    "meaning": "הודיה ושבח",
+    "traits": [
+      "אחראי",
+      "מוביל"
+    ],
+    "sign": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "יהודית",
+    "meaning": "של יהודה",
+    "traits": [
+      "אמיצה",
+      "היסטורית"
+    ],
+    "sign": [
+      11,
+      12,
+      1
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "יהלי",
+    "meaning": "יהל לי",
+    "traits": [
+      "זוהרת",
+      "עדינה"
+    ],
+    "sign": [
+      3,
+      4,
+      5,
+      11
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "יואב",
+    "meaning": "ה׳ הוא אב",
+    "traits": [
+      "ישיר",
+      "חד"
+    ],
+    "sign": [
+      10,
+      11,
+      12,
+      1
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "יואל",
+    "meaning": "ה׳ הוא אל",
+    "traits": [
+      "חכם",
+      "ניצב"
+    ],
+    "sign": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "יובל",
+    "meaning": "נחל, זרימה",
+    "traits": [
+      "זורמת",
+      "חופשית"
+    ],
+    "sign": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "יוגב",
+    "meaning": "חקלאי, עובד אדמה",
+    "traits": [
+      "עמל",
+      "שורשי"
+    ],
+    "sign": [
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "יוכבד",
+    "meaning": "ה׳ כבוד",
+    "traits": [
+      "אמהית",
+      "אמיצה"
+    ],
+    "sign": [
+      1,
+      2,
+      3
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "יונתן",
+    "meaning": "ה׳ נתן",
+    "traits": [
+      "נאמן",
+      "אצילי"
+    ],
+    "sign": [
+      5,
+      6,
+      7
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "יוסף",
+    "meaning": "יוסיף ה׳",
+    "traits": [
+      "חולם",
+      "עמיד"
+    ],
+    "sign": [
+      6,
+      7,
+      8
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "יזרעאל",
+    "meaning": "ה׳ יזרע",
+    "traits": [
+      "פורה",
+      "עצום"
+    ],
+    "sign": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "sources": true,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "יחזקאל",
+    "meaning": "יחזק + אל",
+    "traits": [
+      "חזייוני",
+      "עמוק"
+    ],
+    "sign": [
+      10,
+      11,
+      12
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "ים",
+    "meaning": "הים",
+    "traits": [
+      "חופשי",
+      "עמוק"
+    ],
+    "sign": [
+      6,
+      7,
+      8
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "יניב",
+    "meaning": "יניב פרי",
+    "traits": [
+      "יצירתי",
+      "סבלן"
+    ],
+    "sign": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "יסמין",
+    "meaning": "פרח יסמין",
+    "traits": [
+      "ריחנית",
+      "עדינה"
+    ],
+    "sign": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": true,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "יעל",
+    "meaning": "יעלה — עז הבר",
+    "traits": [
+      "אמיצה",
+      "פראית"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": true,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "יעקב",
+    "meaning": "עקב — ואחר כך ישראל",
+    "traits": [
+      "עיקש",
+      "מתפתח"
+    ],
+    "sign": [
+      10,
+      11,
+      12
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "יפת",
+    "meaning": "יפה ופתוח",
+    "traits": [
+      "יפה",
+      "פתוח"
+    ],
+    "sign": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "יצחק",
+    "meaning": "שחוק ושמחה",
+    "traits": [
+      "שמח",
+      "מפתיע"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "ירדן",
+    "meaning": "נהר הירדן",
+    "traits": [
+      "זורם",
+      "ישראלי"
+    ],
+    "sign": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "sources": true,
+    "international": true,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "ירדנה",
+    "meaning": "נהר הירדן",
+    "traits": [
+      "זורמת",
+      "חופשית"
+    ],
+    "sign": [
+      6,
+      7,
+      8
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "ירון",
+    "meaning": "ישיר וירון",
+    "traits": [
+      "שמח",
+      "מוסיקלי"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "ירמיהו",
+    "meaning": "ה׳ ירים",
+    "traits": [
+      "כן",
+      "עמוק"
+    ],
+    "sign": [
+      8,
+      9,
+      10
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "ישבב",
+    "meaning": "ישיב לב",
+    "traits": [
+      "שקט",
+      "פנימי"
+    ],
+    "sign": [
+      12,
+      1,
+      2
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "ישי",
+    "meaning": "ה׳ ישועה",
+    "traits": [
+      "שורשי",
+      "יציב"
+    ],
+    "sign": [
+      5,
+      6,
+      7
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "ישעיהו",
+    "meaning": "ישע ה׳",
+    "traits": [
+      "אופטימי",
+      "ניצב"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "כוכבית",
+    "meaning": "כוכב קטן",
+    "traits": [
+      "זוהרת",
+      "עדינה"
+    ],
+    "sign": [
+      1,
+      2,
+      12
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "כלב",
+    "meaning": "לב שלם",
+    "traits": [
+      "אמיץ",
+      "נאמן"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "כלנית",
+    "meaning": "פרח הכלנית",
+    "traits": [
+      "ישראלית",
+      "אמיצה"
+    ],
+    "sign": [
+      2,
+      3,
+      4
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "כנען",
+    "meaning": "ארץ כנען",
+    "traits": [
+      "עמוק",
+      "שורשי"
+    ],
+    "sign": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "sources": true,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "כנף",
+    "meaning": "כנף ציפור",
+    "traits": [
+      "חופשי",
+      "קל"
+    ],
+    "sign": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "כפיר",
+    "meaning": "גור אריה",
+    "traits": [
+      "אמיץ",
+      "גדל"
+    ],
+    "sign": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "כרם",
+    "meaning": "כרם ענבים",
+    "traits": [
+      "פורה",
+      "עמוק"
+    ],
+    "sign": [
+      8,
+      9,
+      10
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "כרמל",
+    "meaning": "גן ה׳ / הר כרמל",
+    "traits": [
+      "ישראלי",
+      "שורשי"
+    ],
+    "sign": [
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "לאה",
+    "meaning": "עייפה / גבירה",
+    "traits": [
+      "עמוקה",
+      "נסתרת"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "לאל",
+    "meaning": "לאל, לה׳",
+    "traits": [
+      "רוחני",
+      "שקט"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "לב",
+    "meaning": "לב, ליבה",
+    "traits": [
+      "חם",
+      "מרכזי"
+    ],
+    "sign": [
+      1,
+      2,
+      3,
+      12
+    ],
+    "sources": false,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "לבנה",
+    "meaning": "ירח",
+    "traits": [
+      "שקטה",
+      "בולטת"
+    ],
+    "sign": [
+      11,
+      12,
+      1
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "לוטם",
+    "meaning": "שיח לוטם",
+    "traits": [
+      "ייחודית",
+      "חדה"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "לוטן",
+    "meaning": "לוט, מכסה",
+    "traits": [
+      "שקט",
+      "סודי"
+    ],
+    "sign": [
+      8,
+      9,
+      10
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "לוי",
+    "meaning": "מחובר, נספח",
+    "traits": [
+      "מחובר",
+      "נאמן"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "לי",
+    "meaning": "לי, שלי",
+    "traits": [
+      "אישי",
+      "חם"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "ליאור",
+    "meaning": "אורי לי",
+    "traits": [
+      "מאירה",
+      "חמה"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "ליאם",
+    "meaning": "עמי",
+    "traits": [
+      "עולמי",
+      "חברותי"
+    ],
+    "sign": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "ליאת",
+    "meaning": "לי את",
+    "traits": [
+      "אינטימית",
+      "מיוחדת"
+    ],
+    "sign": [
+      6,
+      7,
+      8
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "ליבנה",
+    "meaning": "עץ הלבנה",
+    "traits": [
+      "טהורה",
+      "עמידה"
+    ],
+    "sign": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "ליה",
+    "meaning": "לי היא",
+    "traits": [
+      "אינטימית",
+      "חמה"
+    ],
+    "sign": [
+      1,
+      2,
+      3,
+      11
+    ],
+    "sources": false,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "לימור",
+    "meaning": "לי מור",
+    "traits": [
+      "ריחנית",
+      "עדינה"
+    ],
+    "sign": [
+      2,
+      3,
+      4,
+      11
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "לירון",
+    "meaning": "שיר לי",
+    "traits": [
+      "מוסיקלי",
+      "רגיש"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "לפידות",
+    "meaning": "לפיד, אש",
+    "traits": [
+      "בוערת",
+      "מנהיגה"
+    ],
+    "sign": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "מורן",
+    "meaning": "מוד הים / צמח ים",
+    "traits": [
+      "טבעי",
+      "רענן"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "מיה",
+    "meaning": "מים / מי יודע",
+    "traits": [
+      "מסתורית",
+      "חמה"
+    ],
+    "sign": [
+      8,
+      9,
+      10
+    ],
+    "sources": false,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "מיטב",
+    "meaning": "הטוב ביותר",
+    "traits": [
+      "מצטיין",
+      "שאפתן"
+    ],
+    "sign": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "מיטל",
+    "meaning": "טל מהמים",
+    "traits": [
+      "קלה",
+      "עמוקה"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "מיכאל",
+    "meaning": "מי כאל",
+    "traits": [
+      "עמוק",
+      "רוחני"
+    ],
+    "sign": [
+      8,
+      9,
+      10
+    ],
+    "sources": false,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "מיכל",
+    "meaning": "מי כמו אל",
+    "traits": [
+      "אוהבת",
+      "מגנה"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "מלאכי",
+    "meaning": "מלאכי",
+    "traits": [
+      "שליח",
+      "רוחני"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "מלכה",
+    "meaning": "מלכה",
+    "traits": [
+      "מלכותית",
+      "חזקה"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "מעיין",
+    "meaning": "מעיין מים",
+    "traits": [
+      "טהור",
+      "זורם"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "מרב",
+    "meaning": "ריבוי ושפע",
+    "traits": [
+      "שפע",
+      "נדיבה"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "מרים",
+    "meaning": "מרה / גבירה",
+    "traits": [
+      "אמיצה",
+      "מוסיקלית"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "משה",
+    "meaning": "נמשה מן המים",
+    "traits": [
+      "מנהיג",
+      "צנוע"
+    ],
+    "sign": [
+      1,
+      2,
+      3
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "מתן",
+    "meaning": "מתנה",
+    "traits": [
+      "נדיב",
+      "חם"
+    ],
+    "sign": [
+      12,
+      1,
+      2
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "נבו",
+    "meaning": "הר נבו",
+    "traits": [
+      "חולם",
+      "עמוק"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": true,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "נגה",
+    "meaning": "כוכב נוגה",
+    "traits": [
+      "ראשונה",
+      "בולטת"
+    ],
+    "sign": [
+      1,
+      2,
+      12
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "נדב",
+    "meaning": "נדיב לב",
+    "traits": [
+      "נדיב",
+      "ספונטני"
+    ],
+    "sign": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "נהר",
+    "meaning": "נהר זורם",
+    "traits": [
+      "זורם",
+      "חופשי"
+    ],
+    "sign": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "נוגה",
+    "meaning": "כוכב נוגה, זוהר",
+    "traits": [
+      "בולט",
+      "זוהר"
+    ],
+    "sign": [
+      1,
+      2,
+      12
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "נוי",
+    "meaning": "יופי ונוי",
+    "traits": [
+      "יפה",
+      "חם"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "נועדיה",
+    "meaning": "ה׳ נפגש",
+    "traits": [
+      "רוחנית",
+      "מיוחדת"
+    ],
+    "sign": [
+      10,
+      11,
+      12
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "נועה",
+    "meaning": "נעה, תנועה",
+    "traits": [
+      "חיה",
+      "חופשית"
+    ],
+    "sign": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "sources": false,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "נועם",
+    "meaning": "נועם ועדינות",
+    "traits": [
+      "עדין",
+      "עמוק"
+    ],
+    "sign": [
+      11,
+      12,
+      1
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "נופר",
+    "meaning": "פרח מים",
+    "traits": [
+      "שלווה",
+      "חיה"
+    ],
+    "sign": [
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "נח",
+    "meaning": "מנוחה ונחמה",
+    "traits": [
+      "עמיד",
+      "שקט"
+    ],
+    "sign": [
+      12,
+      1,
+      2
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "נחל",
+    "meaning": "נחל, זרם מים",
+    "traits": [
+      "קרוב",
+      "זורם"
+    ],
+    "sign": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "נחמה",
+    "meaning": "נחמה ועידוד",
+    "traits": [
+      "מנחם",
+      "חם"
+    ],
+    "sign": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "ניב",
+    "meaning": "ניב שפתיים",
+    "traits": [
+      "דובר",
+      "ישיר"
+    ],
+    "sign": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "נילי",
+    "meaning": "ניל — צמח כחול",
+    "traits": [
+      "ייחודית",
+      "שקטה"
+    ],
+    "sign": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "ניסן",
+    "meaning": "חודש הגאולה",
+    "traits": [
+      "חופשי",
+      "חגיגי"
+    ],
+    "sign": [
+      3,
+      4
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "ניצה",
+    "meaning": "ניצה, פרח",
+    "traits": [
+      "מבטיחה",
+      "עדינה"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "ניצן",
+    "meaning": "ניצן, פריחה",
+    "traits": [
+      "מבטיחה",
+      "מתפתחת"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "ניר",
+    "meaning": "אדמה חרושה",
+    "traits": [
+      "פתוח",
+      "עמל"
+    ],
+    "sign": [
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "נמרוד",
+    "meaning": "נמרוד — גיבור ציד",
+    "traits": [
+      "חזק",
+      "אמיץ"
+    ],
+    "sign": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "נעמה",
+    "meaning": "נעימה, מתוקה",
+    "traits": [
+      "עדינה",
+      "נעימה"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "נעמי",
+    "meaning": "נעימה ומתוקה",
+    "traits": [
+      "חמה",
+      "עמוקה"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "נצח",
+    "meaning": "נצח ונצחיות",
+    "traits": [
+      "נצחי",
+      "עמיד"
+    ],
+    "sign": [
+      1,
+      2,
+      11,
+      12
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "נרי",
+    "meaning": "נרי — נרי",
+    "traits": [
+      "מאיר",
+      "אישי"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "נרית",
+    "meaning": "נר",
+    "traits": [
+      "שקטה",
+      "מאירה"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "נתן",
+    "meaning": "נתן ונדיב",
+    "traits": [
+      "ישיר",
+      "נדיב"
+    ],
+    "sign": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "נתנאל",
+    "meaning": "נתון מהאל",
+    "traits": [
+      "מיוחד",
+      "נדיב"
+    ],
+    "sign": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "סיגלית",
+    "meaning": "פרח סגול",
+    "traits": [
+      "עדינה",
+      "מפתיעה"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "סיון",
+    "meaning": "חודש סיון",
+    "traits": [
+      "חכם",
+      "חם"
+    ],
+    "sign": [
+      5,
+      6
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "סער",
+    "meaning": "סערה",
+    "traits": [
+      "נלהב",
+      "עז"
+    ],
+    "sign": [
+      10,
+      11,
+      12
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "ספיר",
+    "meaning": "אבן ספיר",
+    "traits": [
+      "ייחודית",
+      "יקרה"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "עבדיה",
+    "meaning": "עבד ה׳",
+    "traits": [
+      "ענו",
+      "עמוק"
+    ],
+    "sign": [
+      10,
+      11,
+      12
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "עדי",
+    "meaning": "תכשיט, עדי",
+    "traits": [
+      "יפה",
+      "מאיר"
+    ],
+    "sign": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "עדינה",
+    "meaning": "עדינה",
+    "traits": [
+      "עדינה",
+      "רכה"
+    ],
+    "sign": [
+      2,
+      3,
+      4
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "עדן",
+    "meaning": "גן עדן",
+    "traits": [
+      "שלווה",
+      "יפה"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": false,
+    "international": true,
+    "nature": true,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "עובד",
+    "meaning": "עבד, עובד",
+    "traits": [
+      "עמל",
+      "יציב"
+    ],
+    "sign": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "עוז",
+    "meaning": "עוצמה",
+    "traits": [
+      "חזק",
+      "אמיץ"
+    ],
+    "sign": [
+      3,
+      4,
+      5,
+      10
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "עידן",
+    "meaning": "תקופה, עת",
+    "traits": [
+      "מודרני",
+      "נוכח"
+    ],
+    "sign": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "עינב",
+    "meaning": "ענב מתוק",
+    "traits": [
+      "מתוקה",
+      "עדינה"
+    ],
+    "sign": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "עינת",
+    "meaning": "עיניים, מעיין",
+    "traits": [
+      "חדה",
+      "קשובה"
+    ],
+    "sign": [
+      6,
+      7,
+      8
+    ],
+    "sources": true,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "עלי",
+    "meaning": "עלי — הגבוה",
+    "traits": [
+      "חכם",
+      "שורשי"
+    ],
+    "sign": [
+      5,
+      6,
+      7
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "עמוס",
+    "meaning": "נשוא משאו",
+    "traits": [
+      "ישיר",
+      "אמיץ"
+    ],
+    "sign": [
+      8,
+      9,
+      10
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "עמי",
+    "meaning": "עמי, שייך לעמי",
+    "traits": [
+      "שייך",
+      "חם"
+    ],
+    "sign": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "עמיעד",
+    "meaning": "עמי + עד",
+    "traits": [
+      "עממי",
+      "אמין"
+    ],
+    "sign": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "עמית",
+    "meaning": "חבר, שותף",
+    "traits": [
+      "חברותי",
+      "נאמן"
+    ],
+    "sign": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "עמנואל",
+    "meaning": "אל עמנו",
+    "traits": [
+      "מרגיע",
+      "נוכח"
+    ],
+    "sign": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "עמרי",
+    "meaning": "עמי, אנשי",
+    "traits": [
+      "מנהיג",
+      "בונה"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "עמרם",
+    "meaning": "עם רם",
+    "traits": [
+      "שורשי",
+      "יציב"
+    ],
+    "sign": [
+      11,
+      12,
+      1
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "ענבל",
+    "meaning": "ענב + אל",
+    "traits": [
+      "מוסיקלית",
+      "יפה"
+    ],
+    "sign": [
+      8,
+      9,
+      10
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "ענבר",
+    "meaning": "שרף קדום",
+    "traits": [
+      "נדיר",
+      "עמוק"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "ענת",
+    "meaning": "ענות, ענייה",
+    "traits": [
+      "עוצמתית",
+      "מפתיעה"
+    ],
+    "sign": [
+      6,
+      7,
+      8
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "עפר",
+    "meaning": "אדמה, עפר",
+    "traits": [
+      "שורשי",
+      "טבעי"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "עתניאל",
+    "meaning": "עת + אל",
+    "traits": [
+      "מנהיג",
+      "מרגיע"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "פארן",
+    "meaning": "פארן — מדבר יופי",
+    "traits": [
+      "נסתר",
+      "יפה"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": true,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "פדהאל",
+    "meaning": "ה׳ פדה",
+    "traits": [
+      "חופשי",
+      "רוחני"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "פלא",
+    "meaning": "פלא ופלאי",
+    "traits": [
+      "מיוחד",
+      "מפתיע"
+    ],
+    "sign": [
+      1,
+      2,
+      3
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "פנחס",
+    "meaning": "פה נחש / מנחשת",
+    "traits": [
+      "נחוש",
+      "מהיר"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "פנינה",
+    "meaning": "פנינת ים",
+    "traits": [
+      "עמוקה",
+      "יקרה"
+    ],
+    "sign": [
+      8,
+      9,
+      10
+    ],
+    "sources": true,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "פרידה",
+    "meaning": "פרידה — חופש",
+    "traits": [
+      "חופשית",
+      "עמוקה"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": false,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "פרץ",
+    "meaning": "פרץ ופרוץ",
+    "traits": [
+      "ראשוני",
+      "אמיץ"
+    ],
+    "sign": [
+      2,
+      3,
+      4
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "צדוק",
+    "meaning": "צדיק וצדקן",
+    "traits": [
+      "הוגן",
+      "ישר"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "צוף",
+    "meaning": "דבש, מתוק",
+    "traits": [
+      "מתוקה",
+      "ייחודית"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "צוק",
+    "meaning": "צוק, סלע תלול",
+    "traits": [
+      "אמיץ",
+      "יציב"
+    ],
+    "sign": [
+      3,
+      4,
+      5,
+      10
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "צור",
+    "meaning": "סלע, בסיס",
+    "traits": [
+      "יציב",
+      "בסיסי"
+    ],
+    "sign": [
+      1,
+      2,
+      3
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "ציון",
+    "meaning": "ציון, הר ציון",
+    "traits": [
+      "שורשי",
+      "ישראלי"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "ציפורה",
+    "meaning": "ציפור",
+    "traits": [
+      "חופשית",
+      "עדינה"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": true,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "צפנת",
+    "meaning": "נסתר, מוסתר",
+    "traits": [
+      "מסתורית",
+      "עמוקה"
+    ],
+    "sign": [
+      10,
+      11,
+      12
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "קרן",
+    "meaning": "קרן אור, קרן",
+    "traits": [
+      "ממוקדת",
+      "חדה"
+    ],
+    "sign": [
+      1,
+      2,
+      3,
+      12
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "ראובן",
+    "meaning": "ראה בן",
+    "traits": [
+      "מגן",
+      "ראשוני"
+    ],
+    "sign": [
+      8,
+      9,
+      10
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "ראם",
+    "meaning": "ראם — ראם גאה",
+    "traits": [
+      "חזק",
+      "גאה"
+    ],
+    "sign": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "sources": true,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "רביד",
+    "meaning": "שרשרת, נחל",
+    "traits": [
+      "מקשר",
+      "יפה"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "רבקה",
+    "meaning": "מקשרת, קושרת",
+    "traits": [
+      "נחושה",
+      "אוהבת"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "רגם",
+    "meaning": "רגמה, חבורה",
+    "traits": [
+      "מושך",
+      "חברותי"
+    ],
+    "sign": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "רוני",
+    "meaning": "שיר, גיל",
+    "traits": [
+      "שמחה",
+      "אנרגטית"
+    ],
+    "sign": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "רועי",
+    "meaning": "רועה",
+    "traits": [
+      "מגן",
+      "דואג"
+    ],
+    "sign": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "רועם",
+    "meaning": "רעם, עוצמה",
+    "traits": [
+      "עוצמתי",
+      "שקט"
+    ],
+    "sign": [
+      10,
+      11,
+      12,
+      1
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "רות",
+    "meaning": "חברה ורעות",
+    "traits": [
+      "נאמנת",
+      "אמיצה"
+    ],
+    "sign": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "רז",
+    "meaning": "סוד, מסתורין",
+    "traits": [
+      "מסתורי",
+      "עמוק"
+    ],
+    "sign": [
+      10,
+      11,
+      12
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "רזיאל",
+    "meaning": "רז האל",
+    "traits": [
+      "מסתורי",
+      "עמוק"
+    ],
+    "sign": [
+      10,
+      11,
+      12
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "רחל",
+    "meaning": "כבשה, עדינה",
+    "traits": [
+      "עדינה",
+      "עמוקה"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "רימונה",
+    "meaning": "פרי רימון",
+    "traits": [
+      "עשירה",
+      "מורכבת"
+    ],
+    "sign": [
+      8,
+      9,
+      10
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "רינת",
+    "meaning": "שיר ורינה",
+    "traits": [
+      "שמחה",
+      "ביטויית"
+    ],
+    "sign": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "ריצפה",
+    "meaning": "רצף, רצפה",
+    "traits": [
+      "יציבה",
+      "בסיסית"
+    ],
+    "sign": [
+      1,
+      2,
+      3
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "רם",
+    "meaning": "רם ונישא",
+    "traits": [
+      "גאה",
+      "עצמאי"
+    ],
+    "sign": [
+      11,
+      12,
+      1
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "רן",
+    "meaning": "שיר ורנה",
+    "traits": [
+      "שמח",
+      "קליל"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "רנן",
+    "meaning": "שיר ורינה",
+    "traits": [
+      "שמח",
+      "מוסיקלי"
+    ],
+    "sign": [
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "רעם",
+    "meaning": "רעם",
+    "traits": [
+      "עוצמתי",
+      "שקט"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "רפאל",
+    "meaning": "אל רפא",
+    "traits": [
+      "מריפא",
+      "חם"
+    ],
+    "sign": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "sources": false,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "שגב",
+    "meaning": "רום ונישא",
+    "traits": [
+      "נשגב",
+      "אצילי"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "שגית",
+    "meaning": "מוגן, שגוב",
+    "traits": [
+      "מוגנת",
+      "חזקה"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "שובה",
+    "meaning": "שובה ותשובה",
+    "traits": [
+      "שורשית",
+      "עמוקה"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "שושן",
+    "meaning": "שושנה",
+    "traits": [
+      "קלאסית",
+      "עוצמתית"
+    ],
+    "sign": [
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "שושנה",
+    "meaning": "שושנה",
+    "traits": [
+      "קלאסית",
+      "יפה"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": false,
+    "international": true,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "שחם",
+    "meaning": "אבן שחם",
+    "traits": [
+      "ייחודי",
+      "נסתר"
+    ],
+    "sign": [
+      8,
+      9,
+      10
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "שחף",
+    "meaning": "ציפור שחף",
+    "traits": [
+      "חופשי",
+      "גמיש"
+    ],
+    "sign": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "שחר",
+    "meaning": "שחר הבוקר",
+    "traits": [
+      "רענן",
+      "אופטימי"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "שי",
+    "meaning": "מתנה",
+    "traits": [
+      "מיוחד",
+      "חביב"
+    ],
+    "sign": [
+      12,
+      1,
+      2
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "שיפרה",
+    "meaning": "שפרות ויופי",
+    "traits": [
+      "אמיצה",
+      "מטפחת"
+    ],
+    "sign": [
+      1,
+      2,
+      3
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "שיר",
+    "meaning": "שיר",
+    "traits": [
+      "מוסיקלי",
+      "קליל"
+    ],
+    "sign": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "שירה",
+    "meaning": "שירה ושיר",
+    "traits": [
+      "מוסיקלית",
+      "עמוקה"
+    ],
+    "sign": [
+      4,
+      5,
+      6
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "שירן",
+    "meaning": "שיר ושירה",
+    "traits": [
+      "מוסיקלית",
+      "שלמה"
+    ],
+    "sign": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "שלגיה",
+    "meaning": "שלג",
+    "traits": [
+      "שקטה",
+      "רכה"
+    ],
+    "sign": [
+      12,
+      1,
+      2
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "שלו",
+    "meaning": "שלווה",
+    "traits": [
+      "שקט",
+      "שלו"
+    ],
+    "sign": [
+      12,
+      1,
+      2
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "שלומית",
+    "meaning": "שלום",
+    "traits": [
+      "שלווה",
+      "מאחדת"
+    ],
+    "sign": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "שלומציון",
+    "meaning": "שלום ציון",
+    "traits": [
+      "מאחדת",
+      "מלכותית"
+    ],
+    "sign": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "שלח",
+    "meaning": "שלוח, נשלח",
+    "traits": [
+      "ממוקד",
+      "נחוש"
+    ],
+    "sign": [
+      1,
+      2,
+      3
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "שלי",
+    "meaning": "שלי",
+    "traits": [
+      "אישית",
+      "חמה"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "שלכת",
+    "meaning": "נשירת עלים",
+    "traits": [
+      "יפה",
+      "עמוקה"
+    ],
+    "sign": [
+      10,
+      11,
+      12
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "שלמה",
+    "meaning": "שלום",
+    "traits": [
+      "חכם",
+      "בונה"
+    ],
+    "sign": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "שמואל",
+    "meaning": "שמע + אל",
+    "traits": [
+      "קשוב",
+      "ניצב"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "שמחה",
+    "meaning": "שמחה",
+    "traits": [
+      "שמחה",
+      "חיה"
+    ],
+    "sign": [
+      12,
+      1,
+      2
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "שמחית",
+    "meaning": "שמחה",
+    "traits": [
+      "שמחה",
+      "עדינה"
+    ],
+    "sign": [
+      12,
+      1,
+      2,
+      3
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "שמידע",
+    "meaning": "שמי + ידע",
+    "traits": [
+      "חד",
+      "ייחודי"
+    ],
+    "sign": [
+      8,
+      9,
+      10
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "שמיר",
+    "meaning": "שמיר — צמח קוצני",
+    "traits": [
+      "ייחודי",
+      "עמיד"
+    ],
+    "sign": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "שמר",
+    "meaning": "שמר ושמירה",
+    "traits": [
+      "אמין",
+      "מגן"
+    ],
+    "sign": [
+      9,
+      10,
+      11
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "שמשון",
+    "meaning": "שמש",
+    "traits": [
+      "חזק",
+      "עצמתי"
+    ],
+    "sign": [
+      6,
+      7,
+      8
+    ],
+    "sources": true,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "שני",
+    "meaning": "שנהב אדום",
+    "traits": [
+      "נדירה",
+      "בולטת"
+    ],
+    "sign": [
+      10,
+      11,
+      12,
+      1
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "שקד",
+    "meaning": "עץ השקד",
+    "traits": [
+      "מובילה",
+      "אביבית"
+    ],
+    "sign": [
+      1,
+      2,
+      3
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": true
+  },
+  {
+    "name": "שקמה",
+    "meaning": "עץ השקמה",
+    "traits": [
+      "סבלני",
+      "שורשי"
+    ],
+    "sign": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "שקמית",
+    "meaning": "עץ שקמה",
+    "traits": [
+      "עתיקה",
+      "חזקה"
+    ],
+    "sign": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "שרה",
+    "meaning": "שרה ונסיכה",
+    "traits": [
+      "אצילית",
+      "עצמאית"
+    ],
+    "sign": [
+      1,
+      2,
+      3
+    ],
+    "sources": true,
+    "international": true,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "שריה",
+    "meaning": "שר ה׳",
+    "traits": [
+      "עוצמתי",
+      "נסתר"
+    ],
+    "sign": [
+      10,
+      11,
+      12
+    ],
+    "sources": true,
+    "international": false,
+    "nature": false,
+    "gender": "boy",
+    "unisex": false
+  },
+  {
+    "name": "תאנה",
+    "meaning": "עץ תאנה",
+    "traits": [
+      "מתוקה",
+      "שורשית"
+    ],
+    "sign": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "תהל",
+    "meaning": "זוהר, אור",
+    "traits": [
+      "מאירה",
+      "ייחודית"
+    ],
+    "sign": [
+      1,
+      2,
+      3
+    ],
+    "sources": false,
+    "international": false,
+    "nature": false,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "תומר",
+    "meaning": "עץ התמר",
+    "traits": [
+      "ישיר",
+      "עצמאי"
+    ],
+    "sign": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "boy",
+    "unisex": true
+  },
+  {
+    "name": "תכלת",
+    "meaning": "צבע הים",
+    "traits": [
+      "מלכותית",
+      "ייחודית"
+    ],
+    "sign": [
+      3,
+      4,
+      5
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "תלמה",
+    "meaning": "תלם",
+    "traits": [
+      "שורטת",
+      "עמלנית"
+    ],
+    "sign": [
+      7,
+      8,
+      9
+    ],
+    "sources": false,
+    "international": false,
+    "nature": true,
+    "gender": "girl",
+    "unisex": false
+  },
+  {
+    "name": "תמר",
+    "meaning": "עץ תמר",
+    "traits": [
+      "יפה",
+      "חזקה"
+    ],
+    "sign": [
+      1,
+      2,
+      3
+    ],
+    "sources": true,
+    "international": true,
+    "nature": true,
+    "gender": "girl",
+    "unisex": true
+  }
+]

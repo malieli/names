@@ -6,510 +6,7 @@
   <title>מוצאים שם — מחולל שמות</title>
   <link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <script src="names.js"></script>
-  <style>
-    :root {
-      --purple-dark: #3e2063;
-      --purple:      #a643ff;
-      --purple-mid:  #7c3aed;
-      --lavender:    #c8c1ff;
-      --lavender-bg: #f0e8f2;
-      --lavender-light: #f8f5ff;
-      --pink:        #fc5bc4;
-      --cyan:        #18d4fd;
-      --coral:       #e7815f;
-      --yellow:      #f6d721;
-      --surface:     #ffffff;
-      --text:        #1a1a2e;
-      --sub:         #5a4e7c;
-      --muted:       #a9a8c0;
-      --border:      #e4ddf7;
-      --shadow:      rgba(62,32,99,.12);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Assistant', sans-serif;
-      background: var(--lavender-bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    h1, h2, h3 { font-family: 'Secular One', sans-serif; font-weight: 400; }
-
-    /* ── NAV ── */
-    nav {
-      width: 100%;
-      background: var(--purple-dark);
-      padding: 0 32px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 16px rgba(0,0,0,.25);
-    }
-    .nav-logo {
-      font-family: 'Secular One', sans-serif;
-      font-size: 1.1rem;
-      color: #fff;
-      text-decoration: none;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      list-style: none;
-    }
-    .nav-links a {
-      color: rgba(255,255,255,.8);
-      text-decoration: none;
-      font-size: .87rem;
-      font-weight: 600;
-      padding: 6px 11px;
-      border-radius: 8px;
-      transition: all .15s;
-      white-space: nowrap;
-    }
-    .nav-links a:hover { color: #fff; background: rgba(255,255,255,.1); }
-    .nav-sep { color: rgba(255,255,255,.2); font-size: .65rem; }
-    .nav-cta {
-      background: var(--yellow) !important;
-      color: var(--purple-dark) !important;
-      border-radius: 50px !important;
-      padding: 7px 18px !important;
-      font-weight: 700 !important;
-    }
-    .nav-cta:hover { background: #ffe033 !important; }
-
-    /* ── HERO ── */
-    .hero {
-      width: 100%;
-      background: var(--purple-dark);
-      padding: 52px 24px 0;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(166,67,255,.18) 0%, transparent 65%);
-      top: -200px; left: 50%; transform: translateX(-50%);
-      pointer-events: none;
-    }
-    .hero-suns {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-    }
-    .hero-suns span { display: inline-block; animation: float 3s ease-in-out infinite; }
-    .hero-suns span:nth-child(2) { animation-delay: .4s; font-size: 2.2rem; }
-    .hero-suns span:nth-child(3) { animation-delay: .8s; }
-    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
-
-    .hero h1 {
-      font-size: clamp(2rem, 5.5vw, 3.4rem);
-      color: #fff;
-      line-height: 1.25;
-      margin-bottom: 16px;
-      max-width: 580px;
-      margin-left: auto; margin-right: auto;
-    }
-    .hl-cyan   { color: var(--cyan);   text-decoration: underline; text-decoration-color: rgba(24,212,253,.35); text-underline-offset: 4px; }
-    .hl-pink   { color: var(--pink);   text-decoration: underline; text-decoration-color: rgba(252,91,196,.35); text-underline-offset: 4px; }
-    .hl-yellow { color: var(--yellow); text-decoration: underline; text-decoration-color: rgba(246,215,33,.35);  text-underline-offset: 4px; }
-
-    .hero-sub {
-      color: rgba(200,193,255,.8);
-      font-size: 1.05rem;
-      line-height: 1.7;
-      max-width: 380px;
-      margin: 0 auto 28px;
-    }
-    .hero-cta {
-      display: inline-block;
-      background: var(--yellow);
-      color: var(--purple-dark);
-      font-family: 'Secular One', sans-serif;
-      font-size: 1rem;
-      padding: 13px 32px;
-      border-radius: 50px;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 20px rgba(246,215,33,.4);
-      transition: transform .15s, box-shadow .15s;
-      margin-bottom: 40px;
-    }
-    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(246,215,33,.5); }
-
-    /* Baby photos */
-    .baby-photos {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      padding: 0 16px;
-      margin-bottom: -24px;
-    }
-    .baby-photo {
-      width: 115px; height: 155px;
-      border-radius: 70px;
-      object-fit: cover;
-      border: 3px solid rgba(255,255,255,.18);
-      box-shadow: 0 8px 32px rgba(0,0,0,.28);
-      transition: transform .2s;
-    }
-    .baby-photo:hover { transform: translateY(-6px); }
-    .baby-photo:nth-child(2) { height: 178px; transform: translateY(-12px); }
-    .baby-photo:nth-child(2):hover { transform: translateY(-18px); }
-    .baby-photo:nth-child(4) { height: 168px; transform: translateY(-8px); }
-    .baby-photo:nth-child(4):hover { transform: translateY(-14px); }
-
-    /* ── MAIN ── */
-    .main {
-      width: 100%;
-      max-width: 560px;
-      padding: 56px 20px 48px;
-    }
-
-    .section-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(166,67,255,.1);
-      border: 1px solid rgba(166,67,255,.2);
-      border-radius: 50px;
-      padding: 5px 14px;
-      font-size: .75rem;
-      font-weight: 700;
-      color: var(--purple);
-      letter-spacing: .05em;
-      margin-bottom: 10px;
-    }
-    .section-title {
-      font-size: 1.75rem;
-      color: var(--purple-dark);
-      margin-bottom: 6px;
-    }
-    .section-sub {
-      font-size: .95rem;
-      color: var(--sub);
-      margin-bottom: 26px;
-      line-height: 1.65;
-    }
-
-    /* CARD */
-    .card {
-      background: var(--surface);
-      border-radius: 28px;
-      padding: 36px 32px;
-      box-shadow: 0 8px 48px var(--shadow);
-    }
-
-    .form-group { margin-bottom: 24px; }
-    .form-label {
-      display: block;
-      font-weight: 700;
-      font-size: .8rem;
-      color: var(--sub);
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    .form-label-note { font-weight: 400; color: var(--muted); text-transform: none; font-size: .78rem; }
-
-    /* Gender — 3 buttons only */
-    .toggle-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
-    .toggle-btn {
-      padding: 12px 6px;
-      border: 2px solid var(--border);
-      border-radius: 16px;
-      background: var(--lavender-light);
-      font-family: 'Assistant', sans-serif;
-      font-size: .85rem;
-      font-weight: 700;
-      color: var(--muted);
-      cursor: pointer;
-      text-align: center;
-      transition: all .18s;
-      line-height: 1.3;
-    }
-    .toggle-btn .emoji { display: block; font-size: 1.4rem; margin-bottom: 4px; }
-    .toggle-btn:hover { border-color: var(--purple); color: var(--purple); }
-    .toggle-btn.active {
-      background: var(--purple);
-      border-color: var(--purple);
-      color: #fff;
-      box-shadow: 0 4px 16px rgba(166,67,255,.35);
-    }
-
-    /* Date */
-    .date-row { display: grid; grid-template-columns: 1fr 1fr 1.3fr; gap: 10px; }
-    select {
-      width: 100%;
-      padding: 13px 14px;
-      border: 2px solid var(--border);
-      border-radius: 14px;
-      background: var(--lavender-light);
-      font-family: 'Assistant', sans-serif;
-      font-size: .93rem;
-      color: var(--text);
-      outline: none;
-      transition: border-color .15s;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a9a8c0' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: left 12px center;
-    }
-    select:focus { border-color: var(--purple); }
-
-    /* Checkboxes */
-    .checks-col { display: flex; flex-direction: column; gap: 10px; }
-    .check-row { display: flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; }
-    .check-row input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--purple); cursor: pointer; flex-shrink: 0; }
-    .check-row span { font-size: .88rem; font-weight: 600; color: var(--sub); }
-    .check-row:hover span { color: var(--text); }
-
-    .divider { height: 1px; background: var(--border); margin: 4px 0 24px; }
-
-    /* Submit */
-    .btn-submit {
-      width: 100%;
-      padding: 17px;
-      border: none;
-      border-radius: 50px;
-      background: linear-gradient(135deg, var(--purple-mid), var(--purple));
-      color: #fff;
-      font-family: 'Secular One', sans-serif;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: transform .15s, box-shadow .15s;
-      box-shadow: 0 6px 24px rgba(166,67,255,.4);
-      margin-top: 4px;
-    }
-    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(166,67,255,.5); }
-
-    /* Loading */
-    .loading { display: none; text-align: center; padding: 32px 0; }
-    .loading.show { display: block; }
-    .spinner {
-      width: 40px; height: 40px;
-      border: 3px solid var(--border);
-      border-top-color: var(--purple);
-      border-radius: 50%;
-      animation: spin .8s linear infinite;
-      margin: 0 auto 16px;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .loading p { color: var(--sub); font-size: .9rem; }
-
-    /* Birth banner */
-    .birth-banner {
-      background: linear-gradient(135deg, var(--purple-dark), var(--purple-mid));
-      border-radius: 18px;
-      padding: 18px 22px;
-      margin-bottom: 22px;
-      text-align: center;
-      color: white;
-    }
-    .birth-greg { font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
-    .birth-heb  { font-size: .88rem; color: rgba(200,193,255,.85); margin-bottom: 3px; }
-    .birth-dow  { font-size: .8rem;  color: rgba(200,193,255,.65); font-weight: 600; }
-
-    /* Results */
-    .results { display: none; margin-top: 28px; }
-    .results.show { display: block; }
-    .results-title { font-family: 'Secular One', sans-serif; font-size: .88rem; color: var(--muted); margin-bottom: 16px; text-align: center; letter-spacing: .02em; }
-
-    /* Name cards */
-    .name-cards { display: flex; flex-direction: column; gap: 14px; }
-    .name-card {
-      background: var(--lavender-light);
-      border: 2px solid var(--border);
-      border-radius: 20px;
-      padding: 20px 22px;
-      position: relative;
-      overflow: hidden;
-      transition: border-color .2s, transform .15s, box-shadow .15s;
-    }
-    .name-card-accent {
-      position: absolute;
-      top: 0; right: 0;
-      width: 100%; height: 4px;
-      background: linear-gradient(90deg, var(--purple), var(--pink));
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform .2s;
-    }
-    .name-card:hover { border-color: var(--purple); transform: translateY(-2px); box-shadow: 0 8px 28px var(--shadow); }
-    .name-card:hover .name-card-accent,
-    .name-card.liked .name-card-accent { transform: scaleX(1); }
-    .name-card.liked { border-color: var(--pink); background: rgba(252,91,196,.04); }
-    .name-card.liked .name-card-accent { background: linear-gradient(90deg, var(--pink), var(--coral)); }
-
-    .name-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
-    .name-main { font-family: 'Secular One', sans-serif; font-size: 2.1rem; line-height: 1; margin-bottom: 3px; color: var(--purple-dark); }
-    .name-meaning { font-size: .75rem; color: var(--muted); font-weight: 700; letter-spacing: .05em; margin-bottom: 10px; text-transform: uppercase; }
-    .name-story { font-size: .9rem; color: var(--sub); line-height: 1.7; }
-    .name-badges { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 12px; }
-    .badge { font-size: .68rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; }
-    .badge-sources  { background: rgba(246,215,33,.2);  color: #7c5f00; }
-    .badge-intl     { background: rgba(24,212,253,.15); color: #0077a8; }
-    .badge-ahvy     { background: rgba(80,226,193,.2);  color: #166c5e; }
-    .badge-nature   { background: rgba(90,205,100,.2);  color: #1a6e2b; }
-    .badge-unisex   { background: rgba(252,91,196,.15); color: #8b006e; }
-    .badge-trait    { background: rgba(166,67,255,.1);  color: var(--purple-mid); }
-
-    /* Like */
-    .like-btn {
-      background: white;
-      border: 2px solid var(--border);
-      border-radius: 50%;
-      width: 38px; height: 38px;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-      transition: all .2s;
-      line-height: 1;
-      box-shadow: 0 2px 8px var(--shadow);
-    }
-    .like-btn:hover { border-color: var(--pink); transform: scale(1.1); }
-    .like-btn.liked { border-color: var(--pink); background: rgba(252,91,196,.1); }
-
-    /* Actions */
-    .actions-row { display: flex; gap: 10px; margin-top: 22px; }
-    .btn-again {
-      flex: 1; padding: 13px;
-      border: 2px solid var(--border); border-radius: 50px;
-      background: white;
-      font-family: 'Assistant', sans-serif; font-size: .9rem; font-weight: 700; color: var(--sub);
-      cursor: pointer; transition: all .15s;
-    }
-    .btn-again:hover { border-color: var(--purple); color: var(--purple); }
-    .btn-restart {
-      flex: 1; padding: 13px;
-      border: none; border-radius: 50px;
-      background: var(--purple-dark);
-      font-family: 'Assistant', sans-serif; font-size: .9rem; font-weight: 700; color: #fff;
-      cursor: pointer; transition: opacity .15s;
-    }
-    .btn-restart:hover { opacity: .85; }
-
-    /* Liked */
-    .liked-section { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--border); display: none; }
-    .liked-section.show { display: block; }
-    .liked-title { font-family: 'Secular One', sans-serif; font-size: 1rem; margin-bottom: 14px; color: var(--text); }
-    .liked-list { display: flex; flex-wrap: wrap; gap: 8px; }
-    .liked-chip {
-      display: flex; align-items: center; gap: 6px;
-      background: rgba(252,91,196,.1);
-      border: 1.5px solid rgba(252,91,196,.25);
-      border-radius: 50px;
-      padding: 6px 14px;
-      font-size: .88rem; font-weight: 700; color: #b0006e;
-    }
-    .liked-chip button { background: none; border: none; cursor: pointer; font-size: .75rem; color: var(--muted); padding: 0; line-height: 1; }
-    .liked-chip button:hover { color: var(--pink); }
-
-    /* ── BOTTOM BAND ── */
-    .bottom-band {
-      width: 100%;
-      background: var(--purple-dark);
-      padding: 40px 24px;
-    }
-
-    /* Marquee */
-    .marquee-wrap { overflow: hidden; margin-bottom: 36px; }
-    .marquee-track {
-      display: flex;
-      white-space: nowrap;
-      animation: marquee 22s linear infinite;
-    }
-    .marquee-track span {
-      color: rgba(200,193,255,.75);
-      font-size: .8rem;
-      font-weight: 700;
-      padding: 0 20px;
-    }
-    .marquee-track span::after { content: ' ✦'; color: rgba(200,193,255,.3); }
-    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-
-    /* Stats */
-    .stats-row {
-      display: flex;
-      justify-content: center;
-      gap: 48px;
-      flex-wrap: wrap;
-    }
-    .stat { text-align: center; }
-    .stat-num { font-family: 'Secular One', sans-serif; font-size: 2.2rem; color: var(--yellow); line-height: 1; margin-bottom: 4px; }
-    .stat-label { font-size: .75rem; color: rgba(200,193,255,.6); font-weight: 600; letter-spacing: .04em; }
-
-    /* Supported */
-    .supported-label {
-      text-align: center;
-      font-size: .72rem;
-      font-weight: 700;
-      color: rgba(200,193,255,.4);
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      margin-top: 32px;
-      margin-bottom: 16px;
-    }
-    .supported-logos {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-    .supported-item {
-      font-size: .82rem;
-      font-weight: 700;
-      color: rgba(200,193,255,.55);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .sup-dot { width: 7px; height: 7px; border-radius: 50%; }
-
-    /* Footer */
-    footer {
-      width: 100%;
-      background: #2a1545;
-      color: rgba(200,193,255,.35);
-      font-size: .78rem;
-      padding: 20px 24px;
-      text-align: center;
-    }
-    footer a { color: rgba(200,193,255,.5); text-decoration: none; }
-    footer a:hover { color: #fff; }
-    .footer-links { display: flex; justify-content: center; gap: 18px; margin-bottom: 10px; flex-wrap: wrap; }
-
-    @media(max-width:600px) {
-      nav { padding: 0 12px; }
-      .nav-links a { font-size: .76rem; padding: 5px 6px; }
-      .nav-sep { display: none; }
-      .baby-photos .baby-photo:nth-child(1),
-      .baby-photos .baby-photo:nth-child(5) { display: none; }
-      .baby-photo { width: 100px; height: 138px; }
-      .baby-photo:nth-child(2) { height: 160px; }
-      .baby-photo:nth-child(4) { height: 152px; }
-      .card { padding: 24px 18px; }
-      .toggle-row { grid-template-columns: repeat(3,1fr); }
-      .date-row { grid-template-columns: 1fr 1fr; }
-      .date-row select:last-child { grid-column: 1/-1; }
-      .stats-row { gap: 28px; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -519,11 +16,9 @@
   <ul class="nav-links">
     <li><a href="#top">דף הבית</a></li>
     <li><span class="nav-sep">|</span></li>
-    <li><a href="#form-section" onclick="quickGender('boy')">שמות לבנים</a></li>
+    <li><a href="boys.html">שמות לבנים</a></li>
     <li><span class="nav-sep">|</span></li>
-    <li><a href="#form-section" onclick="quickGender('girl')">שמות לבנות</a></li>
-    <li><span class="nav-sep">|</span></li>
-    <li><a href="#form-section" onclick="quickGender('any')">שם בהפתעה</a></li>
+    <li><a href="girls.html">שמות לבנות</a></li>
     <li><span class="nav-sep">|</span></li>
     <li><a href="mailto:mali.aroesti@gmail.com" class="nav-cta">צור קשר</a></li>
   </ul>
@@ -531,43 +26,22 @@
 
 <!-- HERO -->
 <div class="hero" id="top">
-  <div class="hero-suns">
-    <span>☀️</span><span>☀️</span><span>☀️</span>
-  </div>
-  <h1>
-    שם <span class="hl-cyan">יפה</span>, <span class="hl-pink">חם</span><br>
-    ו<span class="hl-yellow">מיוחד</span> לתינוק שלכם
-  </h1>
-  <p class="hero-sub">מזינים כמה פרטים על התינוק — ומקבלים הצעות ורעיונות לשמות</p>
-  <button class="hero-cta" onclick="document.getElementById('form-section').scrollIntoView({behavior:'smooth'})">
-    בואו נמצא שם ✨
-  </button>
-
-  <div class="baby-photos">
-    <img class="baby-photo" src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=240&h=320&fit=crop&crop=faces" alt="" onerror="this.style.display='none'">
-    <img class="baby-photo" src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=240&h=320&fit=crop&crop=faces" alt="" onerror="this.style.display='none'">
-    <img class="baby-photo" src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=240&h=320&fit=crop&crop=faces" alt="" onerror="this.style.display='none'">
-    <img class="baby-photo" src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=240&h=320&fit=crop&crop=faces" alt="" onerror="this.style.display='none'">
-    <img class="baby-photo" src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=240&h=320&fit=crop&crop=faces" alt="" onerror="this.style.display='none'">
-  </div>
+  <img class="hero-img" src="שמות.jpg" alt="אישה בהריון" />
 </div>
 
 <!-- FORM SECTION -->
 <div class="main" id="form-section">
-  <div class="section-eyebrow">✨ מחולל שמות</div>
-  <h2 class="section-title">נמצא יחד את השם</h2>
+  <h2 class="section-title">מוצאים שם</h2>
   <p class="section-sub">מזינים כמה פרטים על התינוק — ומקבלים הצעות ורעיונות לשמות</p>
 
-  <div class="card">
-
-    <form id="nameForm" onsubmit="generateNames(event)">
+  <form id="nameForm" onsubmit="generateNames(event)">
 
       <div class="form-group">
         <label class="form-label">מין התינוק</label>
         <div class="toggle-row">
-          <button type="button" class="toggle-btn" data-val="boy"  onclick="setGender(this)"><span class="emoji">👦</span>בן</button>
-          <button type="button" class="toggle-btn" data-val="girl" onclick="setGender(this)"><span class="emoji">👧</span>בת</button>
-          <button type="button" class="toggle-btn" data-val="any"  onclick="setGender(this)"><span class="emoji">✨</span>הפתעה</button>
+          <button type="button" class="toggle-btn" data-val="boy"  onclick="setGender(this)">בן</button>
+          <button type="button" class="toggle-btn" data-val="girl" onclick="setGender(this)">בת</button>
+          <button type="button" class="toggle-btn" data-val="any"  onclick="setGender(this)">הפתעה</button>
         </div>
       </div>
 
@@ -593,15 +67,15 @@
       <div class="form-group">
         <label class="form-label">סוג השם <span class="form-label-note">(אפשר לבחור כמה)</span></label>
         <div class="checks-col">
-          <label class="check-row"><input type="checkbox" id="f-unisex"> <span>🌈 יוניסקס — שם שמתאים לבנים ולבנות</span></label>
-          <label class="check-row"><input type="checkbox" id="f-sources"><span>📜 מקורות — תנ"כי או מסורתי</span></label>
-          <label class="check-row"><input type="checkbox" id="f-intl">   <span>🌍 מוכר גם בחו"ל</span></label>
-          <label class="check-row"><input type="checkbox" id="f-ahvy">   <span>🔤 מכיל אותיות אהו"י</span></label>
-          <label class="check-row"><input type="checkbox" id="f-nature"> <span>🌿 קשור לטבע</span></label>
+          <label class="check-row"><input type="checkbox" id="f-unisex"> <span>יוניסקס — שם שמתאים לבנים ולבנות</span></label>
+          <label class="check-row"><input type="checkbox" id="f-sources"><span>מקורות — תנ"כי או מסורתי</span></label>
+          <label class="check-row"><input type="checkbox" id="f-intl">   <span>מוכר גם בחו"ל</span></label>
+          <label class="check-row"><input type="checkbox" id="f-ahvy">   <span>מכיל אותיות אהו"י</span></label>
+          <label class="check-row"><input type="checkbox" id="f-nature"> <span>קשור לטבע</span></label>
         </div>
       </div>
 
-      <button type="submit" class="btn-submit">מצאו לי שם ✨</button>
+      <button type="submit" class="btn-submit">מצאו לי שם</button>
     </form>
 
     <!-- LOADING -->
@@ -627,36 +101,17 @@
       </div>
     </div>
 
-  </div>
 </div>
 
 <!-- BOTTOM BAND -->
 <div class="bottom-band">
-  <div class="marquee-wrap">
-    <div class="marquee-track">
-      <span>שמות לבנים</span><span>שמות לבנות</span><span>שמות יוניסקס</span>
-      <span>מקורות תנ"כיים</span><span>שמות מהטבע</span><span>מוכרים בחו"ל</span>
-      <span>400 שמות במאגר</span><span>בחינם לגמרי</span>
-      <span>שמות לבנים</span><span>שמות לבנות</span><span>שמות יוניסקס</span>
-      <span>מקורות תנ"כיים</span><span>שמות מהטבע</span><span>מוכרים בחו"ל</span>
-      <span>400 שמות במאגר</span><span>בחינם לגמרי</span>
-    </div>
-  </div>
-
-  <div class="stats-row">
-    <div class="stat"><div class="stat-num">400+</div><div class="stat-label">שמות במאגר</div></div>
-    <div class="stat"><div class="stat-num">3</div><div class="stat-label">הצעות בכל פעם</div></div>
-    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">אפשרויות</div></div>
-    <div class="stat"><div class="stat-num">0₪</div><div class="stat-label">בחינם לגמרי</div></div>
-  </div>
-
-  <div class="supported-label">השמות מגיעים מ</div>
+  <div class="supported-label">המאגר כולל</div>
   <div class="supported-logos">
-    <div class="supported-item"><span class="sup-dot" style="background:var(--purple)"></span>תנ"ך ומסורת</div>
-    <div class="supported-item"><span class="sup-dot" style="background:var(--cyan)"></span>שמות מודרניים</div>
-    <div class="supported-item"><span class="sup-dot" style="background:var(--pink)"></span>שמות יוניסקס</div>
-    <div class="supported-item"><span class="sup-dot" style="background:#50e2c1"></span>שמות מהטבע</div>
-    <div class="supported-item"><span class="sup-dot" style="background:var(--yellow)"></span>מוכרים בחו"ל</div>
+    <div class="supported-item"><span class="sup-dot" style="background:#6c3fc5"></span>תנ"ך ומסורת</div>
+    <div class="supported-item"><span class="sup-dot" style="background:#18d4fd"></span>שמות מודרניים</div>
+    <div class="supported-item"><span class="sup-dot" style="background:#e91e8c"></span>שמות יוניסקס</div>
+    <div class="supported-item"><span class="sup-dot" style="background:#50c878"></span>שמות מהטבע</div>
+    <div class="supported-item"><span class="sup-dot" style="background:#f0b000"></span>מוכרים בחו"ל</div>
   </div>
 </div>
 
@@ -664,9 +119,8 @@
 <footer>
   <div class="footer-links">
     <a href="#top">דף הבית</a>
-    <a href="#form-section" onclick="quickGender('boy')">שמות לבנים</a>
-    <a href="#form-section" onclick="quickGender('girl')">שמות לבנות</a>
-    <a href="#form-section" onclick="quickGender('any')">שם בהפתעה</a>
+    <a href="boys.html">שמות לבנים</a>
+    <a href="girls.html">שמות לבנות</a>
     <a href="mailto:mali.aroesti@gmail.com">צור קשר</a>
   </div>
   <div>מוצאים שם · 2026</div>
@@ -683,6 +137,8 @@ const yearEl = document.getElementById('year');
 for (let d = 1; d <= 31; d++) dayEl.add(new Option(d, d));
 const nowY = new Date().getFullYear();
 for (let y = nowY + 1; y >= nowY - 2; y--) yearEl.add(new Option(y, y));
+
+// namesData is loaded from names.js (global variable)
 
 // ── Nav helpers ──
 function quickGender(g) {
@@ -730,16 +186,14 @@ function getFilters() {
 }
 
 function getPool(f) {
-  // Build base pool by gender
+  // namesData is now a flat array with gender + unisex fields
   let pool;
-  if (gender === 'boy')  pool = [...namesData.boy];
-  else if (gender === 'girl') pool = [...namesData.girl];
-  else pool = [...namesData.boy, ...namesData.girl, ...namesData.unisex]; // any/surprise
+  if (gender === 'boy')       pool = namesData.filter(n => n.gender === 'boy');
+  else if (gender === 'girl') pool = namesData.filter(n => n.gender === 'girl');
+  else                        pool = [...namesData]; // הפתעה — all names
 
-  // Unisex filter: replace pool with only unisex names (if not "any")
-  if (f.unisex && gender !== 'any') {
-    pool = [...namesData.unisex];
-  }
+  // Unisex filter: narrow to only unisex-marked names
+  if (f.unisex) pool = pool.filter(n => n.unisex);
 
   return pool;
 }
@@ -816,6 +270,7 @@ function removeLike(name) {
 // ── Generate ──
 function generateNames(e) {
   if (e) e.preventDefault();
+  if (!namesData) { alert('המאגר עדיין נטען, נסו שוב עוד שנייה'); return; }
   if (!gender) { alert('בחרו מין'); return; }
   const day   = parseInt(document.getElementById('day').value);
   const month = parseInt(document.getElementById('month').value);
@@ -875,16 +330,13 @@ function renderResults(chosen, day, month, year, fallback, isUnisex) {
   container.innerHTML = '';
 
   chosen.forEach(n => {
-    const inUnisex = namesData.unisex.some(u => u.name === n.name);
-    const isLiked  = likedNames.has(n.name);
-    const badges   = [];
-    if (inUnisex)         badges.push(`<span class="badge badge-unisex">יוניסקס</span>`);
+    const isLiked = likedNames.has(n.name);
+    const badges  = [];
+    if (n.unisex)         badges.push(`<span class="badge badge-unisex">יוניסקס</span>`);
     if (n.sources)        badges.push(`<span class="badge badge-sources">מקורות</span>`);
     if (n.international)  badges.push(`<span class="badge badge-intl">מוכר בחו"ל</span>`);
     if (hasAHVY(n.name))  badges.push(`<span class="badge badge-ahvy">אהו"י</span>`);
     if (n.nature)         badges.push(`<span class="badge badge-nature">טבע</span>`);
-    if (n.traits?.[0])    badges.push(`<span class="badge badge-trait">${n.traits[0]}</span>`);
-    if (n.traits?.[1])    badges.push(`<span class="badge badge-trait">${n.traits[1]}</span>`);
 
     const card = document.createElement('div');
     card.className = 'name-card' + (isLiked ? ' liked' : '');
@@ -893,14 +345,17 @@ function renderResults(chosen, day, month, year, fallback, isUnisex) {
       <div class="name-card-top">
         <div>
           <div class="name-main">${n.name}</div>
-          <div class="name-meaning">${n.meaning}</div>
+          <div class="name-attrs">
+            <div class="name-attr"><strong>שם בלועזית:</strong> ${n.transliteration}</div>
+            <div class="name-attr"><strong>מספר נומרולוגי:</strong> ${n.numerology}</div>
+            ${n.famous ? `<div class="name-attr"><strong>מפורסמים:</strong> ${n.famous}</div>` : ''}
+          </div>
         </div>
         <button class="like-btn ${isLiked ? 'liked' : ''}"
           onclick="toggleLike('${n.name}', this)" title="שמרו את השם">
           ${isLiked ? '❤️' : '♡'}
         </button>
       </div>
-      <div class="name-story">${n.story}</div>
       <div class="name-badges">${badges.join('')}</div>
     `;
     container.appendChild(card);
@@ -913,3 +368,4 @@ function renderResults(chosen, day, month, year, fallback, isUnisex) {
 
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 

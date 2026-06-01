@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>שמות לבנים — מוצאים שם</title>
+  <link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <script src="names.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">מוצאים שם ✨</a>
+  <ul class="nav-links">
+    <li><a href="index.html">דף הבית</a></li>
+    <li><span class="nav-sep">|</span></li>
+    <li><a href="boys.html" class="nav-active">שמות לבנים</a></li>
+    <li><span class="nav-sep">|</span></li>
+    <li><a href="girls.html">שמות לבנות</a></li>
+    <li><span class="nav-sep">|</span></li>
+    <li><a href="index.html" class="nav-cta">מחולל שמות</a></li>
+  </ul>
+</nav>
+
+<div class="list-hero">
+  <h1>👦 שמות לבנים</h1>
+  <p>כל השמות במאגר, ממוינים לפי א-ב</p>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="חפשו שם..." oninput="renderList()" />
+  </div>
+  <div class="filter-chips">
+    <button class="chip" data-filter="all"        onclick="setFilter(this)">הכל</button>
+    <button class="chip" data-filter="unisex"     onclick="setFilter(this)">יוניסקס</button>
+    <button class="chip" data-filter="sources"    onclick="setFilter(this)">מקורות</button>
+    <button class="chip" data-filter="international" onclick="setFilter(this)">מוכר בחו"ל</button>
+    <button class="chip" data-filter="nature"     onclick="setFilter(this)">מהטבע</button>
+  </div>
+</div>
+
+<div class="list-main">
+  <div class="list-count" id="listCount"></div>
+  <div class="names-grid" id="namesGrid"></div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">דף הבית</a>
+    <a href="boys.html">שמות לבנים</a>
+    <a href="girls.html">שמות לבנות</a>
+    <a href="mailto:mali.aroesti@gmail.com">צור קשר</a>
+  </div>
+  <div>מוצאים שם · 2026</div>
+</footer>
+
+<script>
+let allNames = [];
+let activeFilter = 'all';
+
+window.addEventListener('DOMContentLoaded', () => {
+  allNames = namesData.filter(n => n.gender === 'boy');
+  renderList();
+});
+
+function setFilter(btn) {
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  activeFilter = btn.dataset.filter;
+  renderList();
+}
+
+function hasAHVY(name) { return /[אהוי]/.test(name); }
+
+function renderList() {
+  const q = document.getElementById('searchInput').value.trim();
+  let list = [...allNames];
+
+  if (q) list = list.filter(n => n.name.includes(q) || n.meaning.includes(q));
+
+  if (activeFilter === 'unisex')        list = list.filter(n => n.unisex);
+  else if (activeFilter === 'sources')  list = list.filter(n => n.sources);
+  else if (activeFilter === 'international') list = list.filter(n => n.international);
+  else if (activeFilter === 'nature')   list = list.filter(n => n.nature);
+
+  document.getElementById('listCount').textContent = `${list.length} שמות`;
+
+  const grid = document.getElementById('namesGrid');
+  if (list.length === 0) {
+    grid.innerHTML = '<div class="no-results">לא נמצאו שמות</div>';
+    return;
+  }
+
+  grid.innerHTML = list.map(n => {
+    const badges = [];
+    if (n.unisex)        badges.push(`<span class="badge badge-unisex">יוניסקס</span>`);
+    if (n.sources)       badges.push(`<span class="badge badge-sources">מקורות</span>`);
+    if (n.international) badges.push(`<span class="badge badge-intl">מוכר בחו"ל</span>`);
+    if (hasAHVY(n.name)) badges.push(`<span class="badge badge-ahvy">אהו"י</span>`);
+    if (n.nature)        badges.push(`<span class="badge badge-nature">טבע</span>`);
+    return `
+      <div class="name-tile">
+        <div class="tile-name">${n.name}</div>
+        <div class="tile-attrs">
+          <div class="tile-attr"><strong>שם בלועזית:</strong> ${n.transliteration}</div>
+          <div class="tile-attr"><strong>מספר נומרולוגי:</strong> ${n.numerology}</div>
+          ${n.famous ? `<div class="tile-attr"><strong>מפורסמים:</strong> ${n.famous}</div>` : ''}
+        </div>
+        <div class="tile-badges">${badges.join('')}</div>
+      </div>`;
+  }).join('');
+}
+</script>
+</body>
+</html>
