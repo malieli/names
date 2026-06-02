@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>שמות לבנים — מוצאים שם</title>
+  <title>קטגוריה — מוצאים שם</title>
   <link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <script src="names.js"></script>
   <link rel="stylesheet" href="styles.css" />
@@ -15,7 +15,7 @@
   <ul class="nav-links">
     <li><a href="index.html">דף הבית</a></li>
     <li><span class="nav-sep">|</span></li>
-    <li><a href="boys.html" class="nav-active">שמות לבנים</a></li>
+    <li><a href="boys.html">שמות לבנים</a></li>
     <li><span class="nav-sep">|</span></li>
     <li><a href="girls.html">שמות לבנות</a></li>
     <li><span class="nav-sep">|</span></li>
@@ -26,21 +26,20 @@
 </nav>
 
 <div class="list-banner">
-  <img src="שמות.jpg" alt="שמות לבנים" />
+  <img src="שמות.jpg" alt="קטגוריה" />
 </div>
 
 <div class="list-intro">
-  <h1>👦 שמות לבנים</h1>
-  <p class="list-sub">כל השמות במאגר, ממוינים לפי א–ב</p>
+  <h1 id="pageTitle">שמות</h1>
+  <p class="list-sub" id="pageSubtitle"></p>
   <div class="search-bar">
     <input type="text" id="searchInput" placeholder="חפשו שם או משמעות..." oninput="renderList()" />
   </div>
   <div class="filter-chips">
-    <button class="chip active" data-filter="all"           onclick="setFilter(this)">הכל</button>
-    <button class="chip"        data-filter="unisex"        onclick="setFilter(this)">יוניסקס</button>
-    <button class="chip"        data-filter="sources"       onclick="setFilter(this)">מקורות</button>
-    <button class="chip"        data-filter="international" onclick="setFilter(this)">מוכר בחו"ל</button>
-    <button class="chip"        data-filter="nature"        onclick="setFilter(this)">מהטבע</button>
+    <button class="chip active" data-filter="all"  onclick="setFilter(this)">הכל</button>
+    <button class="chip" data-filter="boy"         onclick="setFilter(this)">בנים</button>
+    <button class="chip" data-filter="girl"        onclick="setFilter(this)">בנות</button>
+    <button class="chip" data-filter="unisex"      onclick="setFilter(this)">יוניסקס</button>
   </div>
 </div>
 
@@ -72,6 +71,27 @@
 </footer>
 
 <script>
+const CATS = {
+  sources: { title: '📖 שמות מהמקורות',  sub: 'שמות מהתנ"ך, התלמוד והמסורת היהודית', fn: n => n.sources },
+  modern:  { title: '🌟 שמות מודרניים',   sub: 'שמות שנוצרו בעידן הציוני והמודרני',   fn: n => !n.sources },
+  unisex:  { title: '✨ שמות יוניסקס',    sub: 'שמות שמתאימים לבנים ולבנות כאחד',    fn: n => n.unisex },
+  nature:  { title: '🌿 שמות מהטבע',     sub: 'שמות שקשורים לטבע, לצמחים ולמים',    fn: n => n.nature },
+  intl:    { title: '🌍 מוכרים בחו"ל',   sub: 'שמות שמוכרים גם מחוץ לישראל',        fn: n => n.international },
+};
+
+const params = new URLSearchParams(location.search);
+const catKey = params.get('cat') || 'sources';
+const cat = CATS[catKey] || CATS.sources;
+
+document.title = `${cat.title.replace(/[^֐-׿ ]/g,'').trim()} — מוצאים שם`;
+document.getElementById('pageTitle').textContent    = cat.title;
+document.getElementById('pageSubtitle').textContent = cat.sub;
+
+// Mark active cat-link
+document.querySelectorAll('.cat-link').forEach(a => {
+  if (a.href.includes(`cat=${catKey}`)) a.style.color = 'var(--accent)';
+});
+
 let activeFilter = 'all';
 
 window.addEventListener('DOMContentLoaded', renderList);
@@ -87,11 +107,13 @@ function hasAHVY(name) { return /[אהוי]/.test(name); }
 
 function renderList() {
   const q = document.getElementById('searchInput').value.trim();
+  // deduplicate by name — keep first occurrence
   const seen = new Set();
   let list = namesData.filter(n => {
-    if (!(n.gender === 'boy' || n.unisex)) return false;
+    if (!cat.fn(n)) return false;
     if (seen.has(n.name)) return false;
-    seen.add(n.name); return true;
+    seen.add(n.name);
+    return true;
   });
 
   if (q) list = list.filter(n =>
@@ -100,35 +122,35 @@ function renderList() {
     (n.transliteration && n.transliteration.toLowerCase().includes(q.toLowerCase()))
   );
 
-  if (activeFilter === 'unisex')             list = list.filter(n => n.unisex);
-  else if (activeFilter === 'sources')       list = list.filter(n => n.sources);
-  else if (activeFilter === 'international') list = list.filter(n => n.international);
-  else if (activeFilter === 'nature')        list = list.filter(n => n.nature);
+  if (activeFilter === 'boy')    list = list.filter(n => n.gender === 'boy');
+  else if (activeFilter === 'girl')   list = list.filter(n => n.gender === 'girl');
+  else if (activeFilter === 'unisex') list = list.filter(n => n.unisex);
 
   list.sort((a, b) => a.name.localeCompare(b.name, 'he'));
-  document.getElementById('listCount').textContent = list.length + ' שמות';
+  document.getElementById('listCount').textContent = `${list.length} שמות`;
 
   const grid = document.getElementById('namesGrid');
   if (!list.length) { grid.innerHTML = '<div class="no-results">לא נמצאו שמות</div>'; return; }
 
   grid.innerHTML = list.map(n => {
     const badges = [];
-    if (n.unisex)        badges.push('<span class="badge badge-unisex">יוניסקס</span>');
-    if (n.sources)       badges.push('<span class="badge badge-sources">מקורות</span>');
-    if (n.international) badges.push('<span class="badge badge-intl">מוכר בחו"ל</span>');
-    if (hasAHVY(n.name)) badges.push('<span class="badge badge-ahvy">אהו"י</span>');
-    if (n.nature)        badges.push('<span class="badge badge-nature">טבע</span>');
-    return '<div class="name-tile">' +
-      '<div class="tile-name">' + n.name + '</div>' +
-      '<div class="tile-translit">' + n.transliteration + '</div>' +
-      (n.short_text ? '<div class="tile-short-text">' + n.short_text + '</div>' : '') +
-      '<div class="tile-attrs">' +
-        '<div class="tile-attr"><strong>משמעות:</strong> ' + n.meaning + '</div>' +
-        '<div class="tile-attr"><strong>נומרולוגיה:</strong> ' + n.numerology + '</div>' +
-        (n.famous ? '<div class="tile-attr"><strong>מפורסמים:</strong> ' + n.famous + '</div>' : '') +
-      '</div>' +
-      '<div class="tile-badges">' + badges.join('') + '</div>' +
-    '</div>';
+    if (n.unisex)        badges.push(`<span class="badge badge-unisex">יוניסקס</span>`);
+    if (n.sources)       badges.push(`<span class="badge badge-sources">מקורות</span>`);
+    if (n.international) badges.push(`<span class="badge badge-intl">מוכר בחו"ל</span>`);
+    if (hasAHVY(n.name)) badges.push(`<span class="badge badge-ahvy">אהו"י</span>`);
+    if (n.nature)        badges.push(`<span class="badge badge-nature">טבע</span>`);
+    return `
+      <div class="name-tile">
+        <div class="tile-name">${n.name}</div>
+        <div class="tile-translit">${n.transliteration}</div>
+        ${n.short_text ? `<div class="tile-short-text">${n.short_text}</div>` : ''}
+        <div class="tile-attrs">
+          <div class="tile-attr"><strong>משמעות:</strong> ${n.meaning}</div>
+          <div class="tile-attr"><strong>נומרולוגיה:</strong> ${n.numerology}</div>
+          ${n.famous ? `<div class="tile-attr"><strong>מפורסמים:</strong> ${n.famous}</div>` : ''}
+        </div>
+        <div class="tile-badges">${badges.join('')}</div>
+      </div>`;
   }).join('');
 }
 </script>

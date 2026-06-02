@@ -12,15 +12,17 @@
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#top">מוצאים שם ✨</a>
+  <a class="nav-logo" href="index.html">מוצאים שם ✨</a>
   <ul class="nav-links">
-    <li><a href="#top">דף הבית</a></li>
+    <li><a href="index.html" class="nav-active">דף הבית</a></li>
     <li><span class="nav-sep">|</span></li>
     <li><a href="boys.html">שמות לבנים</a></li>
     <li><span class="nav-sep">|</span></li>
     <li><a href="girls.html">שמות לבנות</a></li>
     <li><span class="nav-sep">|</span></li>
-    <li><a href="mailto:mali.aroesti@gmail.com" class="nav-cta">צור קשר</a></li>
+    <li><a href="unisex.html">יוניסקס</a></li>
+    <li><span class="nav-sep">|</span></li>
+    <li><a href="index.html" class="nav-cta">מחולל שמות</a></li>
   </ul>
 </nav>
 
@@ -105,22 +107,24 @@
 
 <!-- BOTTOM BAND -->
 <div class="bottom-band">
-  <div class="supported-label">המאגר כולל</div>
+  <div class="supported-label">קטגוריות</div>
   <div class="supported-logos">
-    <div class="supported-item"><span class="sup-dot" style="background:#6c3fc5"></span>תנ"ך ומסורת</div>
-    <div class="supported-item"><span class="sup-dot" style="background:#18d4fd"></span>שמות מודרניים</div>
-    <div class="supported-item"><span class="sup-dot" style="background:#e91e8c"></span>שמות יוניסקס</div>
-    <div class="supported-item"><span class="sup-dot" style="background:#50c878"></span>שמות מהטבע</div>
-    <div class="supported-item"><span class="sup-dot" style="background:#f0b000"></span>מוכרים בחו"ל</div>
+    <a href="category.html?cat=sources" class="cat-link"><span class="sup-dot" style="background:#6c3fc5"></span>תנ"ך ומסורת</a>
+    <a href="category.html?cat=modern"  class="cat-link"><span class="sup-dot" style="background:#18d4fd"></span>שמות מודרניים</a>
+    <a href="category.html?cat=unisex"  class="cat-link"><span class="sup-dot" style="background:#e91e8c"></span>יוניסקס</a>
+    <a href="category.html?cat=nature"  class="cat-link"><span class="sup-dot" style="background:#50c878"></span>שמות מהטבע</a>
+    <a href="category.html?cat=intl"    class="cat-link"><span class="sup-dot" style="background:#f0b000"></span>מוכרים בחו"ל</a>
   </div>
 </div>
+
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-links">
-    <a href="#top">דף הבית</a>
+    <a href="index.html">דף הבית</a>
     <a href="boys.html">שמות לבנים</a>
     <a href="girls.html">שמות לבנות</a>
+    <a href="unisex.html">יוניסקס</a>
     <a href="mailto:mali.aroesti@gmail.com">צור קשר</a>
   </div>
   <div>מוצאים שם · 2026</div>
@@ -343,11 +347,13 @@ function renderResults(chosen, day, month, year, fallback, isUnisex) {
     card.innerHTML = `
       <div class="name-card-accent"></div>
       <div class="name-card-top">
-        <div>
+        <div style="flex:1">
           <div class="name-main">${n.name}</div>
+          <div class="name-translit">${n.transliteration}</div>
+          ${n.short_text ? `<div class="name-short-text">${n.short_text}</div>` : ''}
           <div class="name-attrs">
-            <div class="name-attr"><strong>שם בלועזית:</strong> ${n.transliteration}</div>
-            <div class="name-attr"><strong>מספר נומרולוגי:</strong> ${n.numerology}</div>
+            <div class="name-attr"><strong>משמעות:</strong> ${n.meaning}</div>
+            <div class="name-attr"><strong>נומרולוגיה:</strong> ${n.numerology}</div>
             ${n.famous ? `<div class="name-attr"><strong>מפורסמים:</strong> ${n.famous}</div>` : ''}
           </div>
         </div>
