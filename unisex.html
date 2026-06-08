@@ -5,35 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>שמות יוניסקס — מוצאים שם</title>
   <link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <script>window.LIST_CONFIG = { gender: 'unisex', title: 'שמות יוניסקס', emoji: '🌈' };</script>
   <script src="names.js"></script>
+  <script src="layout.js"></script>
+  <script src="list-page.js"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<nav>
-  <a class="nav-logo" href="index.html">מוצאים שם ✨</a>
-  <ul class="nav-links">
-    <li><a href="index.html">דף הבית</a></li>
-    <li><span class="nav-sep">|</span></li>
-    <li><a href="boys.html">שמות לבנים</a></li>
-    <li><span class="nav-sep">|</span></li>
-    <li><a href="girls.html">שמות לבנות</a></li>
-    <li><span class="nav-sep">|</span></li>
-    <li><a href="unisex.html" class="nav-active">יוניסקס</a></li>
-    <li><span class="nav-sep">|</span></li>
-    <li><a href="index.html" class="nav-cta">מחולל שמות</a></li>
-  </ul>
-</nav>
-
 <div class="list-banner">
-  <img src="שמות.jpg" alt="שמות יוניסקס" />
+  <img src="images/pregnant.jpg" alt="" />
 </div>
 
 <div class="list-intro">
-  <h1>✨ שמות יוניסקס</h1>
-  <p class="list-sub">שמות שמתאימים לבנים ולבנות כאחד</p>
+  <h1 id="pageTitle">שמות יוניסקס</h1>
+  <p class="list-sub">100 שמות שמתאימים לבנים ולבנות</p>
   <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="חפשו שם או משמעות..." oninput="renderList()" />
+    <input type="text" id="searchInput" placeholder="חפשו שם..." oninput="renderList()" />
   </div>
   <div class="filter-chips">
     <button class="chip active" data-filter="all"           onclick="setFilter(this)">הכל</button>
@@ -48,89 +36,5 @@
   <div class="names-grid" id="namesGrid"></div>
 </div>
 
-<div class="bottom-band">
-  <div class="supported-label">קטגוריות</div>
-  <div class="supported-logos">
-    <a href="category.html?cat=sources" class="cat-link"><span class="sup-dot" style="background:#6c3fc5"></span>תנ"ך ומסורת</a>
-    <a href="category.html?cat=modern"  class="cat-link"><span class="sup-dot" style="background:#18d4fd"></span>שמות מודרניים</a>
-    <a href="category.html?cat=unisex"  class="cat-link"><span class="sup-dot" style="background:#e91e8c"></span>יוניסקס</a>
-    <a href="category.html?cat=nature"  class="cat-link"><span class="sup-dot" style="background:#50c878"></span>שמות מהטבע</a>
-    <a href="category.html?cat=intl"    class="cat-link"><span class="sup-dot" style="background:#f0b000"></span>מוכרים בחו"ל</a>
-  </div>
-</div>
-
-<footer>
-  <div class="footer-links">
-    <a href="index.html">דף הבית</a>
-    <a href="boys.html">שמות לבנים</a>
-    <a href="girls.html">שמות לבנות</a>
-    <a href="unisex.html">יוניסקס</a>
-    <a href="mailto:mali.aroesti@gmail.com">צור קשר</a>
-  </div>
-  <div>מוצאים שם · 2026</div>
-</footer>
-
-<script>
-let activeFilter = 'all';
-
-window.addEventListener('DOMContentLoaded', renderList);
-
-function setFilter(btn) {
-  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-  btn.classList.add('active');
-  activeFilter = btn.dataset.filter;
-  renderList();
-}
-
-function hasAHVY(name) { return /[אהוי]/.test(name); }
-
-function renderList() {
-  const q = document.getElementById('searchInput').value.trim();
-  // deduplicate by name — keep first occurrence
-  const seen = new Set();
-  let list = namesData.filter(n => {
-    if (!n.unisex) return false;
-    if (seen.has(n.name)) return false;
-    seen.add(n.name);
-    return true;
-  });
-
-  if (q) list = list.filter(n =>
-    n.name.includes(q) ||
-    (n.meaning && n.meaning.includes(q)) ||
-    (n.transliteration && n.transliteration.toLowerCase().includes(q.toLowerCase()))
-  );
-
-  if (activeFilter === 'sources')       list = list.filter(n => n.sources);
-  else if (activeFilter === 'international') list = list.filter(n => n.international);
-  else if (activeFilter === 'nature')   list = list.filter(n => n.nature);
-
-  list.sort((a, b) => a.name.localeCompare(b.name, 'he'));
-  document.getElementById('listCount').textContent = `${list.length} שמות`;
-
-  const grid = document.getElementById('namesGrid');
-  if (!list.length) { grid.innerHTML = '<div class="no-results">לא נמצאו שמות</div>'; return; }
-
-  grid.innerHTML = list.map(n => {
-    const badges = [];
-    if (n.sources)       badges.push(`<span class="badge badge-sources">מקורות</span>`);
-    if (n.international) badges.push(`<span class="badge badge-intl">מוכר בחו"ל</span>`);
-    if (hasAHVY(n.name)) badges.push(`<span class="badge badge-ahvy">אהו"י</span>`);
-    if (n.nature)        badges.push(`<span class="badge badge-nature">טבע</span>`);
-    return `
-      <div class="name-tile">
-        <div class="tile-name">${n.name}</div>
-        <div class="tile-translit">${n.transliteration}</div>
-        ${n.short_text ? `<div class="tile-short-text">${n.short_text}</div>` : ''}
-        <div class="tile-attrs">
-          <div class="tile-attr"><strong>משמעות:</strong> ${n.meaning}</div>
-          <div class="tile-attr"><strong>נומרולוגיה:</strong> ${n.numerology}</div>
-          ${n.famous ? `<div class="tile-attr"><strong>מפורסמים:</strong> ${n.famous}</div>` : ''}
-        </div>
-        <div class="tile-badges">${badges.join('')}</div>
-      </div>`;
-  }).join('');
-}
-</script>
 </body>
 </html>

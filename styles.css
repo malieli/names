@@ -599,3 +599,212 @@ footer {
   background: var(--accent-soft);
   color: var(--accent);
 }
+
+/* ── HAMBURGER ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.hamburger span {
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: all .25s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media(max-width: 600px) {
+  .hamburger { display: flex; }
+  nav { flex-wrap: nowrap; height: 56px; padding: 0 16px; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 56px; right: 0; left: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 0 20px;
+    z-index: 150;
+    box-shadow: 0 8px 24px var(--shadow);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: block; font-size: .95rem; padding: 10px 20px; border-radius: 0; }
+  .nav-sep { display: none; }
+  .nav-cta {
+    margin: 8px 20px 0 !important;
+    display: block !important;
+    text-align: center !important;
+    border-radius: 10px !important;
+  }
+}
+
+/* ── Random Name Card (index page) ── */
+/* ── Random card + filters layout ── */
+.random-card-section {
+  width: 100%;
+  padding: 16px 0 8px;
+  display: flex;
+  flex-direction: row-reverse; /* כרטיס בשמאל, כפתורים בימין */
+  align-items: center;
+  gap: 10px;
+}
+
+/* עטיפת כפתורי מגדר + כרטיס */
+.card-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* שורת כפתורי מגדר — מעל הכרטיס בלבד */
+.gender-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+/* כפתורי פילטר — עמודה מחוץ למסגרת, צד ימין */
+.card-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+  width: 84px;
+}
+.filter-btn {
+  padding: 10px 4px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  font-family: 'Assistant', sans-serif;
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--sub);
+  cursor: pointer;
+  text-align: center;
+  transition: all .14s;
+  white-space: nowrap;
+}
+.filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+.filter-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* כרטיס תינוק — לחיץ */
+.random-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--surface);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px var(--shadow);
+  padding: 20px 16px 24px;
+  width: 100%;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: box-shadow .15s;
+}
+.random-card:hover { box-shadow: 0 6px 32px rgba(108,63,197,.18); }
+.random-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 16px;
+  display: block;
+}
+.random-card-name {
+  font-family: 'Secular One', sans-serif;
+  font-size: 2.2rem;
+  color: var(--accent);
+  letter-spacing: .02em;
+}
+.random-card-translit {
+  font-size: .9rem;
+  color: var(--sub);
+  margin-top: 4px;
+  direction: ltr;
+}
+
+/* ── לב על התמונה ── */
+.random-card {
+  position: relative;
+}
+.like-heart {
+  position: absolute;
+  bottom: 76px;
+  right: 12px;    /* צד ימין של הכרטיס */
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: transform .15s, border-color .15s;
+  z-index: 2;
+}
+.like-heart:hover { transform: scale(1.15); border-color: #e91e8c; }
+
+/* ── רשימת שמות אהובים — שמאל הכרטיס ── */
+.liked-panel {
+  display: flex;          /* תמיד תופס מקום */
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+  width: 110px;
+  order: -1;
+  visibility: hidden;     /* מוסתר אבל שומר מקום */
+}
+.liked-panel.has-items {
+  visibility: visible;
+}
+.liked-panel-title {
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--sub);
+  margin-bottom: 2px;
+  text-align: center;
+}
+.liked-panel-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 6px 8px;
+  gap: 4px;
+}
+.liked-panel-name {
+  font-family: 'Secular One', sans-serif;
+  font-size: .95rem;
+  color: var(--accent);
+}
+.liked-panel-item button {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: .75rem;
+  padding: 0;
+  line-height: 1;
+}
+.liked-panel-item button:hover { color: #e91e8c; }

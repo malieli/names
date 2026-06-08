@@ -6,29 +6,15 @@
   <title>מוצאים שם — מחולל שמות</title>
   <link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <script src="names.js"></script>
+  <script src="layout.js"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-logo" href="index.html">מוצאים שם ✨</a>
-  <ul class="nav-links">
-    <li><a href="index.html" class="nav-active">דף הבית</a></li>
-    <li><span class="nav-sep">|</span></li>
-    <li><a href="boys.html">שמות לבנים</a></li>
-    <li><span class="nav-sep">|</span></li>
-    <li><a href="girls.html">שמות לבנות</a></li>
-    <li><span class="nav-sep">|</span></li>
-    <li><a href="unisex.html">יוניסקס</a></li>
-    <li><span class="nav-sep">|</span></li>
-    <li><a href="index.html" class="nav-cta">מחולל שמות</a></li>
-  </ul>
-</nav>
 
-<!-- HERO -->
+<!-- HERO BANNER -->
 <div class="hero" id="top">
-  <img class="hero-img" src="שמות.jpg" alt="אישה בהריון" />
+  <img class="hero-img" src="images/pregnant.jpg" alt="אישה בהריון" />
 </div>
 
 <!-- FORM SECTION -->
@@ -36,72 +22,40 @@
   <h2 class="section-title">מוצאים שם</h2>
   <p class="section-sub">מזינים כמה פרטים על התינוק — ומקבלים הצעות ורעיונות לשמות</p>
 
-  <form id="nameForm" onsubmit="generateNames(event)">
+      <!-- RANDOM NAME CARD + FILTERS -->
+      <div class="random-card-section" id="randomCardSection">
 
-      <div class="form-group">
-        <label class="form-label">מין התינוק</label>
-        <div class="toggle-row">
-          <button type="button" class="toggle-btn" data-val="boy"  onclick="setGender(this)">בן</button>
-          <button type="button" class="toggle-btn" data-val="girl" onclick="setGender(this)">בת</button>
-          <button type="button" class="toggle-btn" data-val="any"  onclick="setGender(this)">הפתעה</button>
+        <!-- רשימת שמות אהובים — שמאל הכרטיס -->
+        <div class="liked-panel" id="likedPanel"></div>
+
+        <!-- עטיפה: כפתורי מגדר + כרטיס -->
+        <div class="card-main">
+          <!-- כפתורי מגדר — רק מעל הכרטיס -->
+          <div class="gender-row">
+            <button type="button" class="filter-btn" data-val="boy"  onclick="setGender(this)">בן</button>
+            <button type="button" class="filter-btn" data-val="girl" onclick="setGender(this)">בת</button>
+            <button type="button" class="filter-btn" data-val="any"  onclick="setGender(this)">הפתעה</button>
+          </div>
+
+          <!-- כרטיס תינוק — לחיץ להגרלה מחדש -->
+          <div class="random-card" id="randomCard">
+            <img class="random-card-img" id="randomCardImg" src="" alt="" onclick="showRandomCard(gender || 'any')" title="לחצו להגרלה מחדש" />
+            <button class="like-heart" id="likeBtn" onclick="likeAndNext()" title="שמרו את השם">♡</button>
+            <div class="random-card-name" id="randomCardName"></div>
+            <div class="random-card-translit" id="randomCardTranslit"></div>
+          </div>
         </div>
-      </div>
 
-      <div class="form-group">
-        <label class="form-label">תאריך לידה משוער</label>
-        <div class="date-row">
-          <select id="day" required><option value="" disabled selected>יום</option></select>
-          <select id="month" required>
-            <option value="" disabled selected>חודש</option>
-            <option value="1">ינואר</option><option value="2">פברואר</option>
-            <option value="3">מרץ</option><option value="4">אפריל</option>
-            <option value="5">מאי</option><option value="6">יוני</option>
-            <option value="7">יולי</option><option value="8">אוגוסט</option>
-            <option value="9">ספטמבר</option><option value="10">אוקטובר</option>
-            <option value="11">נובמבר</option><option value="12">דצמבר</option>
-          </select>
-          <select id="year" required><option value="" disabled selected>שנה</option></select>
+        <!-- כפתורי פילטר — מחוץ למסגרת, בצד ימין -->
+        <div class="card-filters">
+          <button class="filter-btn" data-filter="unisex"        onclick="toggleCardFilter(this)">יוניסקס</button>
+          <button class="filter-btn" data-filter="sources"       onclick="toggleCardFilter(this)">מקורות</button>
+          <button class="filter-btn" data-filter="international" onclick="toggleCardFilter(this)">חו"ל</button>
+          <button class="filter-btn" data-filter="ahvy"          onclick="toggleCardFilter(this)">אהו"י</button>
+          <button class="filter-btn" data-filter="nature"        onclick="toggleCardFilter(this)">טבע</button>
         </div>
+
       </div>
-
-      <div class="divider"></div>
-
-      <div class="form-group">
-        <label class="form-label">סוג השם <span class="form-label-note">(אפשר לבחור כמה)</span></label>
-        <div class="checks-col">
-          <label class="check-row"><input type="checkbox" id="f-unisex"> <span>יוניסקס — שם שמתאים לבנים ולבנות</span></label>
-          <label class="check-row"><input type="checkbox" id="f-sources"><span>מקורות — תנ"כי או מסורתי</span></label>
-          <label class="check-row"><input type="checkbox" id="f-intl">   <span>מוכר גם בחו"ל</span></label>
-          <label class="check-row"><input type="checkbox" id="f-ahvy">   <span>מכיל אותיות אהו"י</span></label>
-          <label class="check-row"><input type="checkbox" id="f-nature"> <span>קשור לטבע</span></label>
-        </div>
-      </div>
-
-      <button type="submit" class="btn-submit">מצאו לי שם</button>
-    </form>
-
-    <!-- LOADING -->
-    <div class="loading" id="loading">
-      <div class="spinner"></div>
-      <p>מחפשים את השם המתאים...</p>
-    </div>
-
-    <!-- RESULTS -->
-    <div class="results" id="results">
-      <div class="birth-banner" id="birthBanner"></div>
-      <p class="results-title" id="resultsTitle"></p>
-      <div class="name-cards" id="nameCards"></div>
-
-      <div class="actions-row">
-        <button class="btn-again"   onclick="tryAgain()">🔄 נסו שוב</button>
-        <button class="btn-restart" onclick="restart()">התחלה מחדש</button>
-      </div>
-
-      <div class="liked-section" id="likedSection">
-        <div class="liked-title">❤️ השמות שאהבתם</div>
-        <div class="liked-list" id="likedList"></div>
-      </div>
-    </div>
 
 </div>
 
@@ -109,269 +63,136 @@
 <div class="bottom-band">
   <div class="supported-label">קטגוריות</div>
   <div class="supported-logos">
-    <a href="category.html?cat=sources" class="cat-link"><span class="sup-dot" style="background:#6c3fc5"></span>תנ"ך ומסורת</a>
-    <a href="category.html?cat=modern"  class="cat-link"><span class="sup-dot" style="background:#18d4fd"></span>שמות מודרניים</a>
-    <a href="category.html?cat=unisex"  class="cat-link"><span class="sup-dot" style="background:#e91e8c"></span>יוניסקס</a>
-    <a href="category.html?cat=nature"  class="cat-link"><span class="sup-dot" style="background:#50c878"></span>שמות מהטבע</a>
-    <a href="category.html?cat=intl"    class="cat-link"><span class="sup-dot" style="background:#f0b000"></span>מוכרים בחו"ל</a>
+    <a href="boys.html"   class="cat-link"><span class="sup-dot" style="background:#6c3fc5"></span>שמות לבנים</a>
+    <a href="girls.html"  class="cat-link"><span class="sup-dot" style="background:#e91e8c"></span>שמות לבנות</a>
+    <a href="unisex.html" class="cat-link"><span class="sup-dot" style="background:#18d4fd"></span>יוניסקס</a>
+    <a href="boys.html"   class="cat-link"><span class="sup-dot" style="background:#50c878"></span>שמות מהטבע</a>
+    <a href="boys.html"   class="cat-link"><span class="sup-dot" style="background:#f0b000"></span>מוכרים בחו"ל</a>
   </div>
 </div>
 
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-links">
-    <a href="index.html">דף הבית</a>
-    <a href="boys.html">שמות לבנים</a>
-    <a href="girls.html">שמות לבנות</a>
-    <a href="unisex.html">יוניסקס</a>
-    <a href="mailto:mali.aroesti@gmail.com">צור קשר</a>
-  </div>
-  <div>מוצאים שם · 2026</div>
-</footer>
-
 <script>
 // ── State ──
-let gender = null, lastDay, lastMonth, lastYear, lastPicked = [];
-const likedNames = new Set();
+let gender = null;
+const activeFilters = new Set();
+const likedNames = [];   // שמות שעשו להם לב (לפי סדר)
+let currentName = null;  // השם הנוכחי בכרטיס
 
-// ── Init ──
-const dayEl  = document.getElementById('day');
-const yearEl = document.getElementById('year');
-for (let d = 1; d <= 31; d++) dayEl.add(new Option(d, d));
-const nowY = new Date().getFullYear();
-for (let y = nowY + 1; y >= nowY - 2; y--) yearEl.add(new Option(y, y));
+// ── הגרלת שם ──
+function showRandomCard(g) {
+  if (typeof namesData === 'undefined') return;
 
-// namesData is loaded from names.js (global variable)
+  // pool לפי מגדר
+  var pool;
+  if (g === 'boy')       pool = namesData.filter(function(n){ return n.gender === 'boy'; });
+  else if (g === 'girl') pool = namesData.filter(function(n){ return n.gender === 'girl'; });
+  else                   pool = [...namesData];
 
-// ── Nav helpers ──
-function quickGender(g) {
-  setTimeout(() => {
-    const btn = document.querySelector(`.toggle-btn[data-val="${g}"]`);
-    if (btn) setGender(btn);
-  }, 350);
+  // פילטור — OR בין הכפתורים הדלוקים
+  if (activeFilters.size > 0) {
+    var filtered = pool.filter(function(n) {
+      if (activeFilters.has('unisex')        && n.unisex)               return true;
+      if (activeFilters.has('sources')       && n.sources)              return true;
+      if (activeFilters.has('international') && n.international)        return true;
+      if (activeFilters.has('ahvy')          && /[אהוי]/.test(n.name)) return true;
+      if (activeFilters.has('nature')        && n.nature)               return true;
+      return false;
+    });
+    if (filtered.length > 0) pool = filtered;
+  }
+
+  var n = pool[Math.floor(Math.random() * pool.length)];
+  currentName = n;
+  var img = n.gender === 'boy' ? 'images/baby-boy.png' : 'images/baby-girl.png';
+  document.getElementById('randomCardImg').src              = img;
+  document.getElementById('randomCardName').textContent     = n.niqqud || n.name;
+  document.getElementById('randomCardTranslit').textContent = n.transliteration || '';
+  // אפס לב
+  var heart = document.getElementById('likeBtn');
+  if (heart) heart.textContent = likedNames.some(function(l){ return l.name === n.name; }) ? '❤️' : '♡';
 }
 
-// ── UI ──
+// ── לייק + הגרלה הבאה ──
+function likeAndNext() {
+  if (!currentName) return;
+  var heart = document.getElementById('likeBtn');
+  var already = likedNames.findIndex(function(l){ return l.name === currentName.name; });
+  if (already >= 0) {
+    // הסר לייק
+    likedNames.splice(already, 1);
+    heart.textContent = '♡';
+  } else {
+    // הוסף לייק
+    likedNames.push(currentName);
+    heart.textContent = '❤️';
+  }
+  renderLikedPanel();
+  showRandomCard(gender || 'any');
+}
+
+function renderLikedPanel() {
+  var panel = document.getElementById('likedPanel');
+  if (!panel) return;
+  if (likedNames.length === 0) {
+    panel.innerHTML = '';
+    panel.classList.remove('has-items');
+    return;
+  }
+  panel.classList.add('has-items');
+  panel.innerHTML = '<div class="liked-panel-title">❤️ השמות שלי</div>' +
+    likedNames.map(function(n) {
+      return '<div class="liked-panel-item">' +
+        '<span class="liked-panel-name">' + (n.niqqud || n.name) + '</span>' +
+        '<button onclick="removeLiked(\'' + n.name + '\')" title="הסר">✕</button>' +
+        '</div>';
+    }).join('');
+}
+
+function removeLiked(name) {
+  var idx = likedNames.findIndex(function(l){ return l.name === name; });
+  if (idx >= 0) likedNames.splice(idx, 1);
+  if (currentName && currentName.name === name) {
+    document.getElementById('likeBtn').textContent = '♡';
+  }
+  renderLikedPanel();
+}
+
+// ── כפתורי מגדר ──
 function setGender(btn) {
-  document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.gender-row .filter-btn').forEach(function(b){ b.classList.remove('active'); });
   btn.classList.add('active');
   gender = btn.dataset.val;
+  showRandomCard(gender);
 }
 
-// ── Date helpers ──
-const monthNames = ['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
-
-function getGregorianStr(d, m, y) { return `${d} ב${monthNames[m-1]} ${y}`; }
-
-function getHebrewDate(d, m, y) {
-  try {
-    const date = new Date(y, m-1, d);
-    const full = new Intl.DateTimeFormat('he-IL-u-ca-hebrew', { day:'numeric', month:'long', year:'numeric' }).format(date);
-    return full.replace(/,?\s*(ה?תש[א-ת]{0,4}["׳]?[א-ת]?)/, '').replace(/,?\s*\d{3,4}$/, '').trim();
-  } catch(e) { return ''; }
-}
-
-function getDayOfWeek(d, m, y) {
-  return 'יום ' + ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'][new Date(y, m-1, d).getDay()];
-}
-
-// ── Helpers ──
-function hasAHVY(name) { return /[אהוי]/.test(name); }
-
-function getFilters() {
-  return {
-    unisex:  document.getElementById('f-unisex').checked,
-    sources: document.getElementById('f-sources').checked,
-    intl:    document.getElementById('f-intl').checked,
-    ahvy:    document.getElementById('f-ahvy').checked,
-    nature:  document.getElementById('f-nature').checked,
-  };
-}
-
-function getPool(f) {
-  // namesData is now a flat array with gender + unisex fields
-  let pool;
-  if (gender === 'boy')       pool = namesData.filter(n => n.gender === 'boy');
-  else if (gender === 'girl') pool = namesData.filter(n => n.gender === 'girl');
-  else                        pool = [...namesData]; // הפתעה — all names
-
-  // Unisex filter: narrow to only unisex-marked names
-  if (f.unisex) pool = pool.filter(n => n.unisex);
-
-  return pool;
-}
-
-function applyFilters(pool, f) {
-  const anyChecked = f.sources || f.intl || f.ahvy || f.nature;
-  if (!anyChecked) return pool;
-  return pool.filter(n => {
-    if (f.sources && !n.sources)       return false;
-    if (f.intl    && !n.international) return false;
-    if (f.ahvy    && !hasAHVY(n.name)) return false;
-    if (f.nature  && !n.nature)        return false;
-    return true;
-  });
-}
-
-// ── Scoring ──
-function score(n, month) {
-  let s = Math.random() * 6;
-  if (n.sign?.includes(month)) s += 3;
-  if (lastPicked.includes(n.name)) s -= 12;
-  return s;
-}
-
-function pickThree(pool, month) {
-  const scored = pool.map(n => ({ ...n, _s: score(n, month) }));
-  scored.sort((a, b) => b._s - a._s);
-  const chosen = scored.slice(0, 3);
-  lastPicked = chosen.map(n => n.name);
-  return chosen;
-}
-
-// ── Like ──
-function toggleLike(name, btn) {
-  if (likedNames.has(name)) {
-    likedNames.delete(name);
-    btn.textContent = '♡';
-    btn.classList.remove('liked');
-    btn.closest('.name-card').classList.remove('liked');
+// ── כפתורי פילטר (multi-select) ──
+function toggleCardFilter(btn) {
+  var f = btn.dataset.filter;
+  if (activeFilters.has(f)) {
+    activeFilters.delete(f);
+    btn.classList.remove('active');
   } else {
-    likedNames.add(name);
-    btn.textContent = '❤️';
-    btn.classList.add('liked');
-    btn.closest('.name-card').classList.add('liked');
+    activeFilters.add(f);
+    btn.classList.add('active');
   }
-  renderLiked();
+  showRandomCard(gender || 'any');
 }
 
-function renderLiked() {
-  const sec  = document.getElementById('likedSection');
-  const list = document.getElementById('likedList');
-  if (likedNames.size === 0) { sec.classList.remove('show'); return; }
-  sec.classList.add('show');
-  list.innerHTML = [...likedNames].map(name => `
-    <div class="liked-chip">
-      ${name}
-      <button onclick="removeLike('${name}')" title="הסר">✕</button>
-    </div>
-  `).join('');
-}
-
-function removeLike(name) {
-  likedNames.delete(name);
-  document.querySelectorAll('.name-card').forEach(card => {
-    if (card.querySelector('.name-main')?.textContent === name) {
-      card.classList.remove('liked');
-      const btn = card.querySelector('.like-btn');
-      if (btn) { btn.textContent = '♡'; btn.classList.remove('liked'); }
-    }
-  });
-  renderLiked();
-}
-
-// ── Generate ──
-function generateNames(e) {
-  if (e) e.preventDefault();
-  if (!namesData) { alert('המאגר עדיין נטען, נסו שוב עוד שנייה'); return; }
-  if (!gender) { alert('בחרו מין'); return; }
-  const day   = parseInt(document.getElementById('day').value);
-  const month = parseInt(document.getElementById('month').value);
-  const year  = parseInt(document.getElementById('year').value);
-  if (!day || !month || !year) { alert('בחרו תאריך'); return; }
-  lastDay = day; lastMonth = month; lastYear = year;
-  _run(day, month, year, 950);
-}
-
-function tryAgain() { _run(lastDay, lastMonth, lastYear, 750); }
-
-function _run(day, month, year, delay) {
-  showLoading();
-  setTimeout(() => {
-    const f        = getFilters();
-    const base     = getPool(f);
-    const filtered = applyFilters(base, f);
-    const anyF     = f.sources || f.intl || f.ahvy || f.nature;
-    const pool     = filtered.length > 0 ? filtered : base;
-    const fallback = filtered.length === 0 && anyF;
-    hideLoading();
-    renderResults(pickThree(pool, month), day, month, year, fallback, f.unisex);
-  }, delay);
-}
-
-function restart() {
-  document.getElementById('results').classList.remove('show');
-  document.getElementById('nameForm').style.display = 'block';
-  document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.checks-col input').forEach(cb => cb.checked = false);
-  gender = null; lastPicked = [];
-}
-
-function showLoading() {
-  document.getElementById('nameForm').style.display = 'none';
-  document.getElementById('results').classList.remove('show');
-  document.getElementById('loading').classList.add('show');
-}
-function hideLoading() { document.getElementById('loading').classList.remove('show'); }
-
-// ── Render ──
-function renderResults(chosen, day, month, year, fallback, isUnisex) {
-  const hebRaw = getHebrewDate(day, month, year);
-  document.getElementById('birthBanner').innerHTML = `
-    <div class="birth-greg">${getGregorianStr(day, month, year)}</div>
-    ${hebRaw ? `<div class="birth-heb">${hebRaw}</div>` : ''}
-    <div class="birth-dow">${getDayOfWeek(day, month, year)}</div>
-  `;
-
-  const gLabel = { boy:'לבן', girl:'לבת', any:'' }[gender] || '';
-  const uLabel = isUnisex ? ' יוניסקס' : '';
-  document.getElementById('resultsTitle').textContent = fallback
-    ? 'לא נמצאו שמות עם כל הסינונים — מציגים ללא סינון'
-    : `שמות${uLabel} ${gLabel} לתינוק שנולד ב${monthNames[month-1]}`.trim();
-
-  const container = document.getElementById('nameCards');
-  container.innerHTML = '';
-
-  chosen.forEach(n => {
-    const isLiked = likedNames.has(n.name);
-    const badges  = [];
-    if (n.unisex)         badges.push(`<span class="badge badge-unisex">יוניסקס</span>`);
-    if (n.sources)        badges.push(`<span class="badge badge-sources">מקורות</span>`);
-    if (n.international)  badges.push(`<span class="badge badge-intl">מוכר בחו"ל</span>`);
-    if (hasAHVY(n.name))  badges.push(`<span class="badge badge-ahvy">אהו"י</span>`);
-    if (n.nature)         badges.push(`<span class="badge badge-nature">טבע</span>`);
-
-    const card = document.createElement('div');
-    card.className = 'name-card' + (isLiked ? ' liked' : '');
-    card.innerHTML = `
-      <div class="name-card-accent"></div>
-      <div class="name-card-top">
-        <div style="flex:1">
-          <div class="name-main">${n.name}</div>
-          <div class="name-translit">${n.transliteration}</div>
-          ${n.short_text ? `<div class="name-short-text">${n.short_text}</div>` : ''}
-          <div class="name-attrs">
-            <div class="name-attr"><strong>משמעות:</strong> ${n.meaning}</div>
-            <div class="name-attr"><strong>נומרולוגיה:</strong> ${n.numerology}</div>
-            ${n.famous ? `<div class="name-attr"><strong>מפורסמים:</strong> ${n.famous}</div>` : ''}
-          </div>
-        </div>
-        <button class="like-btn ${isLiked ? 'liked' : ''}"
-          onclick="toggleLike('${n.name}', this)" title="שמרו את השם">
-          ${isLiked ? '❤️' : '♡'}
-        </button>
-      </div>
-      <div class="name-badges">${badges.join('')}</div>
-    `;
-    container.appendChild(card);
-  });
-
-  document.getElementById('results').classList.add('show');
-  renderLiked();
-}
+// ── הגרלה ראשונית ──
+(function() {
+  if (typeof namesData === 'undefined' || namesData.length === 0) return;
+  var n = namesData[Math.floor(Math.random() * namesData.length)];
+  gender = n.gender;
+  currentName = n;  // חשוב — בלי זה הלב לא עובד
+  var btn = document.querySelector('.gender-row .filter-btn[data-val="' + gender + '"]');
+  if (btn) btn.classList.add('active');
+  document.getElementById('randomCardImg').src              = gender === 'boy' ? 'images/baby-boy.png' : 'images/baby-girl.png';
+  document.getElementById('randomCardName').textContent     = n.niqqud || n.name;
+  document.getElementById('randomCardTranslit').textContent = n.transliteration || '';
+})();
 </script>
 
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
