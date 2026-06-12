@@ -25,6 +25,67 @@ body {
 }
 h1, h2, h3 { font-family: 'Secular One', sans-serif; font-weight: 400; }
 
+/* ── ACCESSIBILITY BAR ── */
+.a11y-bar {
+  width: 100%;
+  background: #2a2a3a;
+  color: rgba(255,255,255,.75);
+  display: none;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 16px;
+  font-size: .72rem;
+  direction: rtl;
+  flex-wrap: wrap;
+}
+.a11y-bar.a11y-open { display: flex; }
+
+.a11y-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  line-height: 1;
+  transition: background .15s;
+}
+.a11y-toggle:hover { background: var(--accent-soft); }
+.a11y-label {
+  font-weight: 700;
+  letter-spacing: .04em;
+  margin-left: 8px;
+  opacity: .6;
+  font-size: .68rem;
+  text-transform: uppercase;
+}
+.a11y-bar button {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 6px;
+  color: rgba(255,255,255,.85);
+  font-size: .75rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+  line-height: 1.4;
+  font-family: 'Assistant', sans-serif;
+}
+.a11y-bar button:hover { background: rgba(255,255,255,.18); }
+.a11y-bar button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.a11y-reset { margin-right: 4px; opacity: .6; }
+.a11y-reset:hover { opacity: 1 !important; }
+
+/* Accessibility states */
+html.a11y-grayscale { filter: grayscale(1); }
+html.a11y-contrast  { filter: contrast(160%) brightness(.9); }
+html.a11y-underline a { text-decoration: underline !important; }
+
 /* ── NAV ── */
 nav {
   width: 100%;
@@ -92,7 +153,7 @@ nav {
 /* ── MAIN ── */
 .main {
   width: 100%;
-  max-width: 520px;
+  max-width: 660px;
   padding: 52px 24px 64px;
 }
 
@@ -563,6 +624,72 @@ footer {
 
 .no-results { text-align: center; color: var(--muted); padding: 60px 0; font-size: 1rem; }
 
+/* ── Random card — mobile layout ── */
+@media (max-width: 640px) {
+  /* Hero smaller */
+  .hero { max-height: 220px; }
+  .hero img.hero-img { height: 220px; }
+
+  /* Less padding */
+  .main { padding: 28px 16px 40px; }
+
+  .random-card-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .card-main {
+    display: contents;
+  }
+
+  /* שורה 1: כפתורי מגדר */
+  .gender-row {
+    order: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+    margin: 0;
+  }
+
+  /* שורה 2: כפתורי פילטר — 2 שורות (3+2) */
+  .card-filters {
+    order: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    gap: 6px;
+  }
+  .card-filters .filter-btn {
+    padding: 9px 4px;
+    font-size: .8rem;
+  }
+
+  /* שורה 3: כרטיס */
+  .random-card {
+    order: 3;
+  }
+  .random-card-img {
+    height: 180px;
+  }
+  .random-card-name { font-size: 1.8rem; }
+
+  /* שורה 4: שמות אהובים — אופקית בתחתית */
+  .liked-panel {
+    order: 4;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    visibility: hidden;
+    min-height: 0;
+  }
+  .liked-panel.has-items { visibility: visible; }
+  .liked-panel-title { width: 100%; text-align: right; }
+  .liked-panel-item { flex: 0 0 auto; }
+}
+
 /* ── RESPONSIVE — list pages ── */
 @media (max-width: 640px) {
   .list-banner img { height: 130px; }
@@ -672,6 +799,8 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
+  width: 75%;
+  margin: 0 auto;
 }
 
 /* כפתורי פילטר — עמודה מחוץ למסגרת, צד ימין */
@@ -737,6 +866,38 @@ footer {
   margin-top: 4px;
   direction: ltr;
 }
+.random-card-meaning {
+  font-size: .82rem;
+  color: var(--muted);
+  margin-top: 6px;
+  text-align: center;
+}
+.random-card-source-loc {
+  font-size: .8rem;
+  color: var(--muted);
+  margin-top: 4px;
+  text-align: center;
+  height: 1.3em;
+  overflow: hidden;
+}
+.random-card-numerology {
+  font-size: .8rem;
+  color: var(--accent);
+  margin-top: 6px;
+  text-align: center;
+  font-weight: 600;
+}
+.random-card-famous {
+  font-size: .78rem;
+  color: var(--sub);
+  margin-top: 4px;
+  text-align: center;
+  height: 2.8em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
 
 /* ── לב על התמונה ── */
 .random-card {
@@ -797,7 +958,9 @@ footer {
   font-family: 'Secular One', sans-serif;
   font-size: .95rem;
   color: var(--accent);
+  cursor: pointer;
 }
+.liked-panel-name:hover { text-decoration: underline; }
 .liked-panel-item button {
   background: none;
   border: none;
