@@ -5,23 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>מוצאים שם</title>
   <link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
   <script src="names.js"></script>
   <style>
-    :root {
-      --accent:      #6c3fc5;
-      --accent-soft: #f3eeff;
-      --text:        #221810;
-      --sub:         #6A5040;
-      --muted:       #A09080;
-      --border:      #DDD4C6;
-      --surface:     #FFFCF9;
-      --bg:          #F0E8DB;
-      --shadow:      rgba(50,30,10,.10);
-      --pink:        #e91e8c;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html, body {
       height: 100%;
       overflow-x: hidden;
@@ -58,25 +44,7 @@
       color: var(--accent);
       text-decoration: none;
     }
-    .hamburger {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    .hamburger span {
-      display: block;
-      width: 22px; height: 2px;
-      background: var(--accent);
-      border-radius: 2px;
-      transition: all .25s;
-    }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .hamburger { display: flex; padding: 8px; }
 
     .nav-menu {
       display: none;
@@ -148,7 +116,6 @@
       height: 190px;
       object-fit: contain;
       margin-bottom: 12px;
-      pointer-events: none;
     }
 
     .heart-btn {
@@ -182,13 +149,21 @@
       direction: ltr;
       letter-spacing: .03em;
     }
-    .card-meaning {
+    .card-short-text {
       font-size: .84rem;
-      color: var(--muted);
+      color: var(--sub);
       margin-top: 7px;
       text-align: center;
       line-height: 1.55;
-      min-height: 1.3em;
+      min-height: 3.6em;
+    }
+    .card-meaning {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-top: 5px;
+      text-align: center;
+      line-height: 1.5;
+      min-height: 2.6em;
     }
     .card-numerology {
       font-size: .8rem;
@@ -262,12 +237,17 @@
     /* ── CATEGORY FILTER CHIPS ── */
     .filter-row {
       display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
+      flex-wrap: nowrap;
       justify-content: center;
+      gap: 7px;
       width: 100%;
       max-width: 440px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 2px;
     }
+    .filter-row::-webkit-scrollbar { display: none; }
     .filter-chip {
       padding: 9px 18px;
       border: 1.5px solid var(--border);
@@ -354,10 +334,23 @@
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="mobile.html">מוצאים שם ✨</a>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="תפריט">
-    <span></span><span></span><span></span>
-  </button>
+  <div style="display:flex;gap:8px;align-items:center">
+    <button class="a11y-toggle" onclick="toggleA11yBar()" aria-label="נגישות" title="נגישות">Aa</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="תפריט">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
+<div class="a11y-bar" id="a11yBar" role="toolbar" aria-label="סרגל נגישות">
+  <span class="a11y-label">נגישות</span>
+  <button onclick="a11y('font-up')"   title="הגדל טקסט">A+</button>
+  <button onclick="a11y('font-down')" title="הקטן טקסט">A−</button>
+  <button onclick="a11y('contrast')"  title="ניגודיות גבוהה" data-a11y="contrast">◑</button>
+  <button onclick="a11y('grayscale')" title="גווני אפור"      data-a11y="grayscale">◐</button>
+  <button onclick="a11y('underline')" title="הדגש קישורים"   data-a11y="underline"><u>A</u></button>
+  <button onclick="a11y('reset')"     class="a11y-reset">איפוס</button>
+  <button onclick="a11y('close')">✕</button>
+</div>
 <div class="nav-menu" id="navMenu">
   <a href="mobile.html"  onclick="closeMenu()">דף הבית</a>
   <a href="boys.html"    onclick="closeMenu()">שמות לבנים</a>
@@ -388,11 +381,12 @@
 
   <!-- CARD -->
   <div class="card" id="card">
-    <img class="card-img" id="cardImg" src="" alt="" />
+    <img class="card-img" id="cardImg" src="" alt="" onclick="showRandom()" style="cursor:pointer" title="לחצו להגרלה מחדש" />
     <button class="heart-btn" id="heartBtn" onclick="likeAndNext()" title="שמרו את השם">♡</button>
     <div class="card-name"       id="cardName"></div>
     <div class="card-translit"   id="cardTranslit"></div>
     <div class="card-meaning"    id="cardMeaning"></div>
+    <div class="card-short-text" id="cardShortText"></div>
     <div class="card-numerology" id="cardNumerology"></div>
     <div class="card-famous"     id="cardFamous"></div>
     <div class="card-nav">
@@ -419,6 +413,42 @@ const likedNames = [];
 let currentName = null;
 const cardHistory = [];
 let historyIndex = -1;
+const shownNames = new Set();
+let currentPoolKey = '';
+
+// ── Accessibility ──
+var A11Y_KEY = 'a11y_prefs';
+var A11Y_DEF = { fontSize: 0, contrast: false, grayscale: false, underline: false };
+var a11yState = JSON.parse(localStorage.getItem(A11Y_KEY) || 'null') || Object.assign({}, A11Y_DEF);
+
+function applyA11y() {
+  var html = document.documentElement;
+  html.style.fontSize = a11yState.fontSize === 0 ? '' : (100 + a11yState.fontSize * 10) + '%';
+  html.classList.toggle('a11y-contrast',  a11yState.contrast);
+  html.classList.toggle('a11y-grayscale', a11yState.grayscale);
+  html.classList.toggle('a11y-underline', a11yState.underline);
+  localStorage.setItem(A11Y_KEY, JSON.stringify(a11yState));
+  var bar = document.getElementById('a11yBar');
+  if (!bar) return;
+  bar.querySelector('[data-a11y="contrast"]') .classList.toggle('active', a11yState.contrast);
+  bar.querySelector('[data-a11y="grayscale"]').classList.toggle('active', a11yState.grayscale);
+  bar.querySelector('[data-a11y="underline"]').classList.toggle('active', a11yState.underline);
+}
+function a11y(action) {
+  switch (action) {
+    case 'font-up':   a11yState.fontSize = Math.min(a11yState.fontSize + 1, 3);  break;
+    case 'font-down': a11yState.fontSize = Math.max(a11yState.fontSize - 1, -1); break;
+    case 'contrast':  a11yState.contrast  = !a11yState.contrast;  break;
+    case 'grayscale': a11yState.grayscale = !a11yState.grayscale; break;
+    case 'underline': a11yState.underline = !a11yState.underline; break;
+    case 'reset':     a11yState = Object.assign({}, A11Y_DEF);    break;
+    case 'close':     document.getElementById('a11yBar').classList.remove('a11y-open'); return;
+  }
+  applyA11y();
+}
+function toggleA11yBar() {
+  document.getElementById('a11yBar').classList.toggle('a11y-open');
+}
 
 // ── Nav menu ──
 function toggleMenu() {
@@ -443,8 +473,9 @@ function displayCard(n) {
   currentName = n;
   document.getElementById('cardImg').src             = n.gender === 'boy' ? 'images/baby-boy.png' : 'images/baby-girl.png';
   document.getElementById('cardName').textContent    = n.niqqud || n.name;
-  document.getElementById('cardTranslit').textContent = n.transliteration || '';
-  document.getElementById('cardMeaning').textContent  = n.meaning || '';
+  document.getElementById('cardTranslit').textContent   = n.transliteration || '';
+  document.getElementById('cardShortText').textContent  = n.short_text || '';
+  document.getElementById('cardMeaning').textContent    = n.meaning || '';
   document.getElementById('cardNumerology').textContent = n.numerology ? 'ערך נומרולוגי: ' + n.numerology : '';
   document.getElementById('cardFamous').textContent   = n.famous ? 'מפורסמים: ' + n.famous : '';
   document.getElementById('heartBtn').textContent    = likedNames.some(function(l){ return l.name === n.name; }) ? '❤️' : '♡';
@@ -477,9 +508,25 @@ function getPool() {
   return pool;
 }
 
+function getPoolKey() {
+  return (gender || 'any') + '|' + [...activeFilters].sort().join(',');
+}
+
 function showRandom() {
   var pool = getPool();
-  pushAndDisplay(pool[Math.floor(Math.random() * pool.length)]);
+  var key  = getPoolKey();
+
+  if (key !== currentPoolKey) {
+    shownNames.clear();
+    currentPoolKey = key;
+  }
+
+  var unseen = pool.filter(function(n) { return !shownNames.has(n.name); });
+  if (unseen.length === 0) return; // all names shown — stay on current
+
+  var picked = unseen[Math.floor(Math.random() * unseen.length)];
+  shownNames.add(picked.name);
+  pushAndDisplay(picked);
 }
 
 // ── Navigation ──
@@ -510,14 +557,19 @@ function removeLiked(name) {
     document.getElementById('heartBtn').textContent = '♡';
   renderLiked();
 }
+function showNameInCard(name) {
+  var n = likedNames.find(function(l){ return l.name === name; });
+  if (n) displayCard(n);
+}
 function renderLiked() {
   var panel = document.getElementById('likedPanel');
   if (likedNames.length === 0) { panel.classList.remove('has-items'); return; }
   panel.classList.add('has-items');
   document.getElementById('likedChips').innerHTML = likedNames.map(function(n) {
+    var safe = n.name.replace(/'/g, "\\'");
     return '<div class="liked-chip">' +
-      '<span>' + (n.niqqud || n.name) + '</span>' +
-      '<button onclick="removeLiked(\'' + n.name.replace(/'/g, "\\'") + '\')" title="הסר">✕</button>' +
+      '<span style="cursor:pointer" onclick="showNameInCard(\'' + safe + '\')">' + (n.niqqud || n.name) + '</span>' +
+      '<button onclick="removeLiked(\'' + safe + '\')" title="הסר">✕</button>' +
       '</div>';
   }).join('');
 }
@@ -555,6 +607,7 @@ card.addEventListener('touchend', function(e) {
 }, { passive: true });
 
 // ── Init ──
+applyA11y();
 (function() {
   if (typeof namesData === 'undefined' || !namesData.length) return;
   var n = namesData[Math.floor(Math.random() * namesData.length)];
