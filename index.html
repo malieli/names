@@ -25,32 +25,33 @@
       <!-- RANDOM NAME CARD + FILTERS -->
       <div class="random-card-section" id="randomCardSection">
 
-        <!-- רשימת שמות אהובים — שמאל הכרטיס -->
+        <!-- רשימת שמות אהובים — עמודה שמאלית בגריד -->
         <div class="liked-panel" id="likedPanel"></div>
 
-        <!-- עטיפה: כפתורי מגדר + כרטיס -->
-        <div class="card-main">
-          <!-- כפתורי מגדר — רק מעל הכרטיס -->
-          <div class="gender-row">
-            <button type="button" class="filter-btn" data-val="boy"  onclick="setGender(this)">בן</button>
-            <button type="button" class="filter-btn" data-val="girl" onclick="setGender(this)">בת</button>
-            <button type="button" class="filter-btn" data-val="any"  onclick="setGender(this)">הפתעה</button>
-          </div>
+        <!-- כפתורי מגדר — מעל הכרטיס -->
+        <div class="gender-row">
+          <button type="button" class="filter-btn" data-val="boy"  onclick="setGender(this)">בן</button>
+          <button type="button" class="filter-btn" data-val="girl" onclick="setGender(this)">בת</button>
+          <button type="button" class="filter-btn" data-val="any"  onclick="setGender(this)">הפתעה</button>
+        </div>
 
-          <!-- כרטיס תינוק — לחיץ להגרלה מחדש -->
-          <div class="random-card" id="randomCard">
-            <img class="random-card-img" id="randomCardImg" src="" alt="" onclick="showRandomCard(gender || 'any')" title="לחצו להגרלה מחדש" />
-            <button class="like-heart" id="likeBtn" onclick="likeAndNext()" title="שמרו את השם">♡</button>
-            <div class="random-card-name" id="randomCardName"></div>
-            <div class="random-card-translit" id="randomCardTranslit"></div>
-            <div class="random-card-meaning" id="randomCardMeaning"></div>
-            <div class="random-card-source-loc" id="randomCardSourceLoc"></div>
-            <div class="random-card-numerology" id="randomCardNumerology"></div>
-            <div class="random-card-famous" id="randomCardFamous"></div>
+        <!-- כרטיס תינוק — לחיץ להגרלה מחדש -->
+        <div class="random-card" id="randomCard">
+          <img class="random-card-img" id="randomCardImg" src="" alt="" onclick="showRandomCard(gender || 'any')" title="לחצו להגרלה מחדש" />
+          <button class="like-heart" id="likeBtn" onclick="likeAndNext()" title="שמרו את השם">♡</button>
+          <div class="random-card-name" id="randomCardName"></div>
+          <div class="random-card-translit" id="randomCardTranslit"></div>
+          <div class="random-card-meaning" id="randomCardMeaning"></div>
+          <div class="random-card-source-loc" id="randomCardSourceLoc"></div>
+          <div class="random-card-numerology" id="randomCardNumerology"></div>
+          <div class="random-card-famous" id="randomCardFamous"></div>
+          <div class="card-nav-row">
+            <button class="card-nav-btn" id="navBack" onclick="goBack()" disabled title="לשם הקודם">→</button>
+            <button class="card-nav-btn" id="navFwd"  onclick="goForward()" title="לשם הבא">←</button>
           </div>
         </div>
 
-        <!-- כפתורי פילטר — מחוץ למסגרת, בצד ימין -->
+        <!-- כפתורי פילטר — עמודה ימנית בגריד -->
         <div class="card-filters">
           <button class="filter-btn" data-filter="unisex"        onclick="toggleCardFilter(this)">יוניסקס</button>
           <button class="filter-btn" data-filter="sources"       onclick="toggleCardFilter(this)">מקורות</button>
@@ -80,20 +81,47 @@
 // ── State ──
 let gender = null;
 const activeFilters = new Set();
-const likedNames = [];   // שמות שעשו להם לב (לפי סדר)
-let currentName = null;  // השם הנוכחי בכרטיס
+const likedNames  = [];
+let currentName   = null;
 
-// ── הגרלת שם ──
+// ── Navigation history ──
+const cardHistory = [];
+let historyIndex  = -1;
+
+// ── Render card contents (no history side-effects) ──
+function displayCard(n) {
+  currentName = n;
+  document.getElementById('randomCardImg').src              = n.gender === 'boy' ? 'images/baby-boy.png' : 'images/baby-girl.png';
+  document.getElementById('randomCardName').textContent     = n.niqqud || n.name;
+  document.getElementById('randomCardTranslit').textContent = n.transliteration || '';
+  document.getElementById('randomCardMeaning').textContent  = n.meaning || '';
+  var srcLocEl = document.getElementById('randomCardSourceLoc');
+  if (n.sources && n.source_location) { srcLocEl.textContent = 'מקור: ' + n.source_location; srcLocEl.style.visibility = 'visible'; }
+  else                                { srcLocEl.textContent = ''; srcLocEl.style.visibility = 'hidden'; }
+  document.getElementById('randomCardNumerology').textContent = n.numerology ? 'ערך נומרולוגי: ' + n.numerology : '';
+  var famousEl = document.getElementById('randomCardFamous');
+  if (n.famous) { famousEl.textContent = 'מפורסמים: ' + n.famous; famousEl.style.visibility = 'visible'; }
+  else          { famousEl.textContent = ''; famousEl.style.visibility = 'hidden'; }
+  var heart = document.getElementById('likeBtn');
+  if (heart) heart.textContent = likedNames.some(function(l){ return l.name === n.name; }) ? '❤️' : '♡';
+  updateNavButtons();
+}
+
+// ── Push to history then display ──
+function pushAndDisplay(n) {
+  if (historyIndex < cardHistory.length - 1) cardHistory.splice(historyIndex + 1);
+  cardHistory.push(n);
+  historyIndex = cardHistory.length - 1;
+  displayCard(n);
+}
+
+// ── Pick a random name from pool and push to history ──
 function showRandomCard(g) {
   if (typeof namesData === 'undefined') return;
-
-  // pool לפי מגדר
   var pool;
   if (g === 'boy')       pool = namesData.filter(function(n){ return n.gender === 'boy'; });
   else if (g === 'girl') pool = namesData.filter(function(n){ return n.gender === 'girl'; });
   else                   pool = [...namesData];
-
-  // פילטור — AND בין הכפתורים הדלוקים
   if (activeFilters.size > 0) {
     var filtered = pool.filter(function(n) {
       if (activeFilters.has('unisex')        && !n.unisex)               return false;
@@ -105,40 +133,40 @@ function showRandomCard(g) {
     });
     if (filtered.length > 0) pool = filtered;
   }
-
-  var n = pool[Math.floor(Math.random() * pool.length)];
-  currentName = n;
-  var img = n.gender === 'boy' ? 'images/baby-boy.png' : 'images/baby-girl.png';
-  document.getElementById('randomCardImg').src               = img;
-  document.getElementById('randomCardName').textContent      = n.niqqud || n.name;
-  document.getElementById('randomCardTranslit').textContent  = n.transliteration || '';
-  document.getElementById('randomCardMeaning').textContent     = n.meaning || '';
-  var srcLocEl = document.getElementById('randomCardSourceLoc');
-  if (n.sources && n.source_location) { srcLocEl.textContent = 'מקור: ' + n.source_location; srcLocEl.style.visibility = 'visible'; }
-  else { srcLocEl.textContent = ''; srcLocEl.style.visibility = 'hidden'; }
-  document.getElementById('randomCardNumerology').textContent  = n.numerology ? 'ערך נומרולוגי: ' + n.numerology : '';
-  var famousEl = document.getElementById('randomCardFamous');
-  if (n.famous) { famousEl.textContent = 'מפורסמים: ' + n.famous; famousEl.style.visibility = 'visible'; }
-  else          { famousEl.textContent = ''; famousEl.style.visibility = 'hidden'; }
-  // אפס לב
-  var heart = document.getElementById('likeBtn');
-  if (heart) heart.textContent = likedNames.some(function(l){ return l.name === n.name; }) ? '❤️' : '♡';
+  pushAndDisplay(pool[Math.floor(Math.random() * pool.length)]);
 }
 
-// ── לייק + הגרלה הבאה ──
+// ── Back / Forward ──
+function goBack() {
+  if (historyIndex > 0) {
+    historyIndex--;
+    displayCard(cardHistory[historyIndex]);
+  }
+}
+
+function goForward() {
+  if (historyIndex < cardHistory.length - 1) {
+    historyIndex++;
+    displayCard(cardHistory[historyIndex]);
+  } else {
+    showRandomCard(gender || 'any');
+  }
+}
+
+function updateNavButtons() {
+  var backBtn = document.getElementById('navBack');
+  var fwdBtn  = document.getElementById('navFwd');
+  if (backBtn) backBtn.disabled = historyIndex <= 0;
+  if (fwdBtn)  fwdBtn.disabled  = false;
+}
+
+// ── Like / Unlike + advance ──
 function likeAndNext() {
   if (!currentName) return;
-  var heart = document.getElementById('likeBtn');
+  var heart   = document.getElementById('likeBtn');
   var already = likedNames.findIndex(function(l){ return l.name === currentName.name; });
-  if (already >= 0) {
-    // הסר לייק
-    likedNames.splice(already, 1);
-    heart.textContent = '♡';
-  } else {
-    // הוסף לייק
-    likedNames.push(currentName);
-    heart.textContent = '❤️';
-  }
+  if (already >= 0) { likedNames.splice(already, 1); heart.textContent = '♡'; }
+  else              { likedNames.push(currentName);   heart.textContent = '❤️'; }
   renderLikedPanel();
   showRandomCard(gender || 'any');
 }
@@ -146,11 +174,7 @@ function likeAndNext() {
 function renderLikedPanel() {
   var panel = document.getElementById('likedPanel');
   if (!panel) return;
-  if (likedNames.length === 0) {
-    panel.innerHTML = '';
-    panel.classList.remove('has-items');
-    return;
-  }
+  if (likedNames.length === 0) { panel.innerHTML = ''; panel.classList.remove('has-items'); return; }
   panel.classList.add('has-items');
   panel.innerHTML = '<div class="liked-panel-title">❤️ השמות שלי</div>' +
     likedNames.map(function(n) {
@@ -164,29 +188,17 @@ function renderLikedPanel() {
 function showNameInCard(nameStr) {
   var n = likedNames.find(function(l){ return l.name === nameStr; });
   if (!n) return;
-  currentName = n;
-  document.getElementById('randomCardImg').src              = n.gender === 'boy' ? 'images/baby-boy.png' : 'images/baby-girl.png';
-  document.getElementById('randomCardName').textContent     = n.niqqud || n.name;
-  document.getElementById('randomCardTranslit').textContent = n.transliteration || '';
-  document.getElementById('randomCardMeaning').textContent    = n.meaning || '';
-  document.getElementById('randomCardSourceLoc').textContent = (n.sources && n.source_location) ? 'מקור: ' + n.source_location : '';
-  document.getElementById('randomCardNumerology').textContent = n.numerology ? 'ערך נומרולוגי: ' + n.numerology : '';
-  var famousEl = document.getElementById('randomCardFamous');
-  if (n.famous) { famousEl.textContent = 'מפורסמים: ' + n.famous; famousEl.style.visibility = 'visible'; }
-  else          { famousEl.textContent = ''; famousEl.style.visibility = 'hidden'; }
-  document.getElementById('likeBtn').textContent = '❤️';
+  displayCard(n);
 }
 
 function removeLiked(name) {
   var idx = likedNames.findIndex(function(l){ return l.name === name; });
   if (idx >= 0) likedNames.splice(idx, 1);
-  if (currentName && currentName.name === name) {
-    document.getElementById('likeBtn').textContent = '♡';
-  }
+  if (currentName && currentName.name === name) document.getElementById('likeBtn').textContent = '♡';
   renderLikedPanel();
 }
 
-// ── כפתורי מגדר ──
+// ── Gender buttons ──
 function setGender(btn) {
   document.querySelectorAll('.gender-row .filter-btn').forEach(function(b){ b.classList.remove('active'); });
   btn.classList.add('active');
@@ -194,38 +206,22 @@ function setGender(btn) {
   showRandomCard(gender);
 }
 
-// ── כפתורי פילטר (multi-select) ──
+// ── Category filter buttons ──
 function toggleCardFilter(btn) {
   var f = btn.dataset.filter;
-  if (activeFilters.has(f)) {
-    activeFilters.delete(f);
-    btn.classList.remove('active');
-  } else {
-    activeFilters.add(f);
-    btn.classList.add('active');
-  }
+  if (activeFilters.has(f)) { activeFilters.delete(f); btn.classList.remove('active'); }
+  else                      { activeFilters.add(f);    btn.classList.add('active'); }
   showRandomCard(gender || 'any');
 }
 
-// ── הגרלה ראשונית ──
+// ── Initial card ──
 (function() {
   if (typeof namesData === 'undefined' || namesData.length === 0) return;
   var n = namesData[Math.floor(Math.random() * namesData.length)];
   gender = n.gender;
-  currentName = n;  // חשוב — בלי זה הלב לא עובד
   var btn = document.querySelector('.gender-row .filter-btn[data-val="' + gender + '"]');
   if (btn) btn.classList.add('active');
-  document.getElementById('randomCardImg').src               = gender === 'boy' ? 'images/baby-boy.png' : 'images/baby-girl.png';
-  document.getElementById('randomCardName').textContent      = n.niqqud || n.name;
-  document.getElementById('randomCardTranslit').textContent  = n.transliteration || '';
-  document.getElementById('randomCardMeaning').textContent     = n.meaning || '';
-  var srcLocEl = document.getElementById('randomCardSourceLoc');
-  if (n.sources && n.source_location) { srcLocEl.textContent = 'מקור: ' + n.source_location; srcLocEl.style.visibility = 'visible'; }
-  else { srcLocEl.textContent = ''; srcLocEl.style.visibility = 'hidden'; }
-  document.getElementById('randomCardNumerology').textContent  = n.numerology ? 'ערך נומרולוגי: ' + n.numerology : '';
-  var famousEl = document.getElementById('randomCardFamous');
-  if (n.famous) { famousEl.textContent = 'מפורסמים: ' + n.famous; famousEl.style.visibility = 'visible'; }
-  else          { famousEl.textContent = ''; famousEl.style.visibility = 'hidden'; }
+  pushAndDisplay(n);
 })();
 </script>
 

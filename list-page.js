@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Set page title
   const titleEl = document.getElementById('pageTitle');
-  if (titleEl) titleEl.textContent = cfg.emoji + ' ' + cfg.title;
+  if (titleEl) titleEl.textContent = cfg.title;
 
   // Load full pool by gender
   if (typeof namesData === 'undefined') { console.error('namesData not loaded'); return; }

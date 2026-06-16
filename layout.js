@@ -79,7 +79,7 @@ function injectNav() {
       <li><span class="nav-sep">|</span></li>
       <li><a href="mailto:mali.aroesti@gmail.com" class="nav-cta" onclick="closeMenu()">צור קשר</a></li>
       <li><span class="nav-sep">|</span></li>
-      <li><button class="a11y-toggle" onclick="toggleA11yBar()" aria-label="פתח סרגל נגישות" title="נגישות">♿</button></li>
+      <li><button class="a11y-toggle" onclick="toggleA11yBar()" aria-label="פתח סרגל נגישות" title="נגישות">Aa</button></li>
     </ul>
   `;
   document.body.prepend(nav);

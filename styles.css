@@ -3,13 +3,15 @@
   --accent:      #6c3fc5;
   --accent-soft: #f3eeff;
   --accent-mid:  #8b5cf6;
-  --text:        #1a1a2e;
-  --sub:         #5a5570;
-  --muted:       #9e9ab0;
-  --border:      #e8e4f0;
-  --surface:     #ffffff;
-  --bg:          #fafafa;
-  --shadow:      rgba(100,80,160,.08);
+  --gold:        #C88000;
+  --gold-soft:   #FFF5D6;
+  --text:        #221810;
+  --sub:         #6A5040;
+  --muted:       #A09080;
+  --border:      #DDD4C6;
+  --surface:     #FFFCF9;
+  --bg:          #F0E8DB;
+  --shadow:      rgba(50,30,10,.09);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,7 +30,7 @@ h1, h2, h3 { font-family: 'Secular One', sans-serif; font-weight: 400; }
 /* ── ACCESSIBILITY BAR ── */
 .a11y-bar {
   width: 100%;
-  background: #2a2a3a;
+  background: #2A201A;
   color: rgba(255,255,255,.75);
   display: none;
   align-items: center;
@@ -41,16 +43,20 @@ h1, h2, h3 { font-family: 'Secular One', sans-serif; font-weight: 400; }
 .a11y-bar.a11y-open { display: flex; }
 
 .a11y-toggle {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
+  background: var(--accent-soft);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--accent);
   cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 8px;
-  line-height: 1;
-  transition: background .15s;
+  padding: 4px 11px;
+  line-height: 1.5;
+  transition: all .15s;
+  font-family: 'Assistant', sans-serif;
+  letter-spacing: .02em;
 }
-.a11y-toggle:hover { background: var(--accent-soft); }
+.a11y-toggle:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 .a11y-label {
   font-weight: 700;
   letter-spacing: .04em;
@@ -139,12 +145,12 @@ nav {
 .hero {
   width: 100%;
   overflow: hidden;
-  background: #f5f5f5;
-  max-height: 440px;
+  background: var(--bg);
+  max-height: 340px;
 }
 .hero img.hero-img {
   width: 100%;
-  height: 440px;
+  height: 340px;
   object-fit: cover;
   object-position: center 25%;
   display: block;
@@ -313,11 +319,11 @@ select:focus { border-color: var(--accent); }
 .name-attr strong { font-weight: 700; color: var(--text); }
 .name-badges { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 8px; }
 .badge { font-size: .67rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; border: 1px solid transparent; }
-.badge-sources  { background: #fffbe6; border-color: #f0d000; color: #7a5c00; }
-.badge-intl     { background: #e8f7ff; border-color: #90d0f0; color: #005a8a; }
-.badge-ahvy     { background: #e8fff4; border-color: #80d8a8; color: #1a6e40; }
-.badge-nature   { background: #f0ffe8; border-color: #90d060; color: #2a6010; }
-.badge-unisex   { background: #fce8f5; border-color: #e090c8; color: #880060; }
+.badge-sources  { background: #FFF6DC; border-color: #D4A800; color: #7A5C00; }
+.badge-intl     { background: #EEE8FF; border-color: #9070D0; color: #4A2A90; }
+.badge-ahvy     { background: #E8F8EC; border-color: #70C880; color: #1A6030; }
+.badge-nature   { background: #EDF8E0; border-color: #80C050; color: #2A6010; }
+.badge-unisex   { background: #FDEAF8; border-color: #C878B8; color: #800060; }
 
 /* Like */
 .like-btn {
@@ -627,38 +633,34 @@ footer {
 /* ── Random card — mobile layout ── */
 @media (max-width: 640px) {
   /* Hero smaller */
-  .hero { max-height: 220px; }
-  .hero img.hero-img { height: 220px; }
+  .hero { max-height: 200px; }
+  .hero img.hero-img { height: 200px; }
 
   /* Less padding */
   .main { padding: 28px 16px 40px; }
 
+  /* Grid reflow: stack vertically in logical order */
   .random-card-section {
-    flex-direction: column;
-    align-items: stretch;
+    grid-template-areas:
+      "gender"
+      "filters"
+      "card"
+      "liked";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
     gap: 10px;
   }
 
-  .card-main {
-    display: contents;
-  }
-
-  /* שורה 1: כפתורי מגדר */
+  /* Gender buttons — full width */
   .gender-row {
-    order: 1;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
     width: 100%;
     margin: 0;
   }
 
-  /* שורה 2: כפתורי פילטר — 2 שורות (3+2) */
+  /* Filter buttons — 3-column grid */
   .card-filters {
-    order: 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 100%;
     gap: 6px;
   }
   .card-filters .filter-btn {
@@ -666,24 +668,17 @@ footer {
     font-size: .8rem;
   }
 
-  /* שורה 3: כרטיס */
-  .random-card {
-    order: 3;
-  }
-  .random-card-img {
-    height: 180px;
-  }
+  /* Card */
+  .random-card-img { height: 180px; }
   .random-card-name { font-size: 1.8rem; }
 
-  /* שורה 4: שמות אהובים — אופקית בתחתית */
+  /* Liked panel — horizontal strip at bottom */
   .liked-panel {
-    order: 4;
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 8px;
     visibility: hidden;
-    min-height: 0;
   }
   .liked-panel.has-items { visibility: visible; }
   .liked-panel-title { width: 100%; text-align: right; }
@@ -776,40 +771,41 @@ footer {
 }
 
 /* ── Random Name Card (index page) ── */
-/* ── Random card + filters layout ── */
+/* ── Random card + filters layout — CSS Grid (no display:contents needed) ── */
 .random-card-section {
   width: 100%;
   padding: 16px 0 8px;
-  display: flex;
-  flex-direction: row-reverse; /* כרטיס בשמאל, כפתורים בימין */
-  align-items: center;
-  gap: 10px;
+  display: grid;
+  grid-template-areas:
+    "filters gender  liked"
+    "filters card    liked";
+  grid-template-columns: 84px 1fr 110px;
+  grid-template-rows: auto 1fr;
+  gap: 8px 12px;
+  align-items: start;
 }
 
-/* עטיפת כפתורי מגדר + כרטיס */
-.card-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+.liked-panel  { grid-area: liked; }
+.gender-row   { grid-area: gender; }
+.random-card  { grid-area: card; }
+.card-filters { grid-area: filters; }
 
-/* שורת כפתורי מגדר — מעל הכרטיס בלבד */
+/* gender buttons — not full width, centered in their cell */
 .gender-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
-  width: 75%;
+  width: 90%;
   margin: 0 auto;
 }
 
-/* כפתורי פילטר — עמודה מחוץ למסגרת, צד ימין */
+/* כפתורי פילטר — עמודה אנכית, כפתורים ממורכזים אנכית */
 .card-filters {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  flex-shrink: 0;
-  width: 84px;
+  align-self: stretch;
+  justify-content: center;
 }
 .filter-btn {
   padding: 10px 4px;
@@ -924,15 +920,42 @@ footer {
 }
 .like-heart:hover { transform: scale(1.15); border-color: #e91e8c; }
 
-/* ── רשימת שמות אהובים — שמאל הכרטיס ── */
+/* ── ניווט הקודם / הבא ── */
+.card-nav-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 10px 0 4px;
+}
+.card-nav-btn {
+  background: var(--accent-soft);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+.card-nav-btn:hover:not(:disabled) {
+  background: #e8dcff;
+  border-color: var(--accent);
+}
+.card-nav-btn:disabled {
+  opacity: .35;
+  cursor: default;
+}
+
+/* ── רשימת שמות אהובים — עמודה שמאלית בגריד ── */
 .liked-panel {
-  display: flex;          /* תמיד תופס מקום */
+  display: flex;
   flex-direction: column;
   gap: 6px;
-  flex-shrink: 0;
   width: 110px;
-  order: -1;
-  visibility: hidden;     /* מוסתר אבל שומר מקום */
+  visibility: hidden;     /* מוסתר אבל שומר מקום בגריד */
+  align-self: start;
 }
 .liked-panel.has-items {
   visibility: visible;
