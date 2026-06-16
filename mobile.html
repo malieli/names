@@ -8,17 +8,10 @@
   <link rel="stylesheet" href="shared.css" />
   <script src="names.js"></script>
   <style>
-    html, body {
-      height: 100%;
-      overflow-x: hidden;
-    }
-
     body {
       font-family: 'Assistant', sans-serif;
       background: var(--bg);
       color: var(--text);
-      display: flex;
-      flex-direction: column;
       min-height: 100vh;
       min-height: 100dvh;
     }
@@ -83,15 +76,13 @@
       margin-top: 8px;
     }
 
-    /* ── MAIN SCROLL AREA ── */
+    /* ── MAIN ── */
     .main {
-      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 14px 14px 28px;
+      padding: 14px 14px 36px;
       gap: 12px;
-      overflow-y: auto;
     }
 
     /* ── CARD ── */
@@ -107,8 +98,8 @@
       flex-direction: column;
       align-items: center;
       position: relative;
-      touch-action: pan-y;
       user-select: none;
+      min-height: 480px;
     }
 
     .card-img {
@@ -155,7 +146,6 @@
       margin-top: 7px;
       text-align: center;
       line-height: 1.55;
-      min-height: 3.6em;
     }
     .card-meaning {
       font-size: .82rem;
@@ -163,7 +153,6 @@
       margin-top: 5px;
       text-align: center;
       line-height: 1.5;
-      min-height: 2.6em;
     }
     .card-numerology {
       font-size: .8rem;
@@ -183,6 +172,7 @@
       overflow: hidden;
       line-height: 1.55;
       min-height: 2.4em;
+      width: 100%;
     }
 
     .card-nav {
