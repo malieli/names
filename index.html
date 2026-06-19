@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <script src="names.js"></script>
   <script src="layout.js"></script>
+  <script src="popularity.js"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -47,6 +48,10 @@
           <div class="random-card-source-loc" id="randomCardSourceLoc"></div>
           <div class="random-card-numerology" id="randomCardNumerology"></div>
           <div class="random-card-famous" id="randomCardFamous"></div>
+          <div class="card-pop-bar" id="randomCardPopBar" style="display:none">
+            <span class="pop-bar-lbl" id="randomCardPopLbl"></span>
+            <div class="pop-bar"><div class="pop-bar-fill" id="randomCardPopFill" style="width:0%"></div></div>
+          </div>
           <div class="card-nav-row">
             <button class="card-nav-btn" id="navBack" onclick="goBack()" disabled title="לשם הקודם">→</button>
             <button class="card-nav-btn" id="navFwd"  onclick="goForward()" title="לשם הבא">←</button>
@@ -55,12 +60,22 @@
 
         <!-- כפתורי פילטר — עמודה ימנית בגריד -->
         <div class="card-filters">
+          <div class="pop-vios-section">
+            <div class="pop-vios-switch" id="popVIosSwitch" data-state="pop">
+              <div class="pop-vios-thumb"></div>
+              <button class="pop-vios-hit" data-val="pop"  onclick="setPopPreset('pop')"></button>
+              <button class="pop-vios-hit" data-val="mid"  onclick="setPopPreset('mid')"></button>
+              <button class="pop-vios-hit" data-val="rare" onclick="setPopPreset('rare')"></button>
+            </div>
+            <div class="pop-vios-label" id="popVIosLabel">נפוץ</div>
+          </div>
           <button class="filter-btn" data-filter="unisex"        onclick="toggleCardFilter(this)">יוניסקס</button>
           <button class="filter-btn" data-filter="sources"       onclick="toggleCardFilter(this)">מקורות</button>
           <button class="filter-btn" data-filter="international" onclick="toggleCardFilter(this)">חו"ל</button>
           <button class="filter-btn" data-filter="ahvy"          onclick="toggleCardFilter(this)">אהו"י</button>
           <button class="filter-btn" data-filter="nature"        onclick="toggleCardFilter(this)">טבע</button>
         </div>
+
 
       </div>
 
@@ -86,6 +101,19 @@ const activeFilters = new Set();
 const likedNames  = [];
 let currentName   = null;
 
+// popularityTarget, popularityRange, popScore, popularityWeight, weightedRandom → popularity.js
+
+function popLabel(p) {
+  if (p <= 35) return 'נדיר';
+  if (p <= 60) return 'לא שגרתי';
+  if (p <= 78) return 'בינוני';
+  if (p <= 92) return 'נפוץ';
+  return 'מאוד נפוץ';
+}
+function popToBarPct(p) {
+  return Math.round(Math.pow(p / 100, 2) * 100);
+}
+
 // ── Navigation history ──
 const cardHistory = [];
 let historyIndex  = -1;
@@ -105,6 +133,10 @@ function displayCard(n) {
   var famousEl = document.getElementById('randomCardFamous');
   if (n.famous) { famousEl.textContent = 'מפורסמים: ' + n.famous; famousEl.style.visibility = 'visible'; }
   else          { famousEl.textContent = ''; famousEl.style.visibility = 'hidden'; }
+  var pop = n.popularity || 50;
+  document.getElementById('randomCardPopBar').style.display  = 'flex';
+  document.getElementById('randomCardPopLbl').textContent    = popLabel(pop);
+  document.getElementById('randomCardPopFill').style.width   = popToBarPct(pop) + '%';
   var heart = document.getElementById('likeBtn');
   if (heart) heart.textContent = likedNames.some(function(l){ return l.name === n.name; }) ? '❤️' : '♡';
   updateNavButtons();
@@ -136,7 +168,7 @@ function showRandomCard(g) {
     });
     if (filtered.length > 0) pool = filtered;
   }
-  pushAndDisplay(pool[Math.floor(Math.random() * pool.length)]);
+  pushAndDisplay(weightedRandom(pool));
 }
 
 // ── Back / Forward ──
@@ -214,6 +246,18 @@ function toggleCardFilter(btn) {
   var f = btn.dataset.filter;
   if (activeFilters.has(f)) { activeFilters.delete(f); btn.classList.remove('active'); }
   else                      { activeFilters.add(f);    btn.classList.add('active'); }
+  showRandomCard(gender || 'any');
+}
+
+// ── Popularity preset ──
+var POP_PRESETS  = { pop: {target:80,range:20}, mid: {target:70,range:30}, rare: {target:20,range:15} };
+var POP_LABELS   = { pop: 'נפוץ', mid: 'בינוני', rare: 'נדיר' };
+function setPopPreset(val) {
+  var p = POP_PRESETS[val];
+  popularityTarget = p.target;
+  popularityRange  = p.range;
+  document.getElementById('popVIosSwitch').dataset.state = val;
+  document.getElementById('popVIosLabel').textContent    = POP_LABELS[val];
   showRandomCard(gender || 'any');
 }
 

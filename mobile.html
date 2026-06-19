@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared.css" />
   <script src="names.js"></script>
+  <script src="popularity.js"></script>
   <style>
     body {
       font-family: 'Assistant', sans-serif;
@@ -369,6 +370,22 @@
     <button class="filter-chip" data-filter="nature"        onclick="toggleFilter(this)">טבע</button>
   </div>
 
+  <!-- כפתור פופולריות -->
+  <div class="pop-section">
+    <span class="pop-section-label">פופולריות</span>
+    <div class="pop-ios-group">
+      <div class="pop-ios-switch" id="popIosSwitch" data-state="pop">
+        <div class="pop-ios-thumb"></div>
+        <button class="pop-ios-hit" data-val="pop"  onclick="setPopPreset('pop')"></button>
+        <button class="pop-ios-hit" data-val="mid"  onclick="setPopPreset('mid')"></button>
+        <button class="pop-ios-hit" data-val="rare" onclick="setPopPreset('rare')"></button>
+      </div>
+      <div class="pop-ios-labels">
+        <span>נפוץ</span><span>בינוני</span><span>נדיר</span>
+      </div>
+    </div>
+  </div>
+
   <!-- CARD -->
   <div class="card" id="card">
     <img class="card-img" id="cardImg" src="" alt="" onclick="showRandom()" style="cursor:pointer" title="לחצו להגרלה מחדש" />
@@ -379,6 +396,10 @@
     <div class="card-short-text" id="cardShortText"></div>
     <div class="card-numerology" id="cardNumerology"></div>
     <div class="card-famous"     id="cardFamous"></div>
+    <div class="card-pop-bar" id="cardPopBar" style="display:none">
+      <span class="pop-bar-lbl" id="cardPopLbl"></span>
+      <div class="pop-bar"><div class="pop-bar-fill" id="cardPopFill" style="width:0%"></div></div>
+    </div>
     <div class="card-nav">
       <button class="nav-btn" id="navBack" onclick="goBack()"    disabled>→</button>
       <button class="nav-btn" id="navFwd"  onclick="goForward()"         >←</button>
@@ -401,6 +422,17 @@ let gender = null;
 const activeFilters = new Set();
 const likedNames = [];
 let currentName = null;
+
+function popLabel(p) {
+  if (p <= 35) return 'נדיר';
+  if (p <= 60) return 'לא שגרתי';
+  if (p <= 78) return 'בינוני';
+  if (p <= 92) return 'נפוץ';
+  return 'מאוד נפוץ';
+}
+function popToBarPct(p) {
+  return Math.round(Math.pow(p / 100, 2) * 100);
+}
 const cardHistory = [];
 let historyIndex = -1;
 const shownNames = new Set();
@@ -468,6 +500,10 @@ function displayCard(n) {
   document.getElementById('cardMeaning').textContent    = n.meaning || '';
   document.getElementById('cardNumerology').textContent = n.numerology ? 'ערך נומרולוגי: ' + n.numerology : '';
   document.getElementById('cardFamous').textContent   = n.famous ? 'מפורסמים: ' + n.famous : '';
+  var pop = n.popularity || 50;
+  document.getElementById('cardPopBar').style.display  = 'flex';
+  document.getElementById('cardPopLbl').textContent    = popLabel(pop);
+  document.getElementById('cardPopFill').style.width   = popToBarPct(pop) + '%';
   document.getElementById('heartBtn').textContent    = likedNames.some(function(l){ return l.name === n.name; }) ? '❤️' : '♡';
   updateNavButtons();
 }
@@ -478,6 +514,8 @@ function pushAndDisplay(n) {
   historyIndex = cardHistory.length - 1;
   displayCard(n);
 }
+
+// popularityTarget, popularityRange, popScore, popularityWeight, weightedRandom → popularity.js
 
 // ── Pool logic ──
 function getPool() {
@@ -514,7 +552,7 @@ function showRandom() {
   var unseen = pool.filter(function(n) { return !shownNames.has(n.name); });
   if (unseen.length === 0) return; // all names shown — stay on current
 
-  var picked = unseen[Math.floor(Math.random() * unseen.length)];
+  var picked = weightedRandom(unseen);
   shownNames.add(picked.name);
   pushAndDisplay(picked);
 }
@@ -564,6 +602,16 @@ function renderLiked() {
   }).join('');
 }
 
+// ── Popularity preset ──
+var POP_PRESETS = { pop: {target:80,range:20}, mid: {target:70,range:30}, rare: {target:20,range:15} };
+function setPopPreset(val) {
+  var p = POP_PRESETS[val];
+  popularityTarget = p.target;
+  popularityRange  = p.range;
+  document.getElementById('popIosSwitch').dataset.state = val;
+  showRandom();
+}
+
 // ── Gender ──
 function setGender(btn) {
   document.querySelectorAll('.gender-btn').forEach(function(b){ b.classList.remove('active'); });
@@ -600,7 +648,7 @@ card.addEventListener('touchend', function(e) {
 applyA11y();
 (function() {
   if (typeof namesData === 'undefined' || !namesData.length) return;
-  var n = namesData[Math.floor(Math.random() * namesData.length)];
+  var n = weightedRandom(namesData);
   gender = n.gender;
   var btn = document.querySelector('.gender-btn[data-val="' + gender + '"]');
   if (btn) btn.classList.add('active');
