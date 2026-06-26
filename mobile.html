@@ -198,14 +198,15 @@
 
     /* ── GENDER BUTTONS ── */
     .gender-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      justify-content: center;
       gap: 8px;
       width: 100%;
       max-width: 440px;
     }
     .gender-btn {
-      padding: 14px 8px;
+      min-width: 130px;
+      padding: 14px 32px;
       border: 2px solid var(--border);
       border-radius: 14px;
       background: var(--surface);
@@ -358,7 +359,7 @@
   <div class="gender-row">
     <button class="gender-btn" data-val="boy"  onclick="setGender(this)">בן</button>
     <button class="gender-btn" data-val="girl" onclick="setGender(this)">בת</button>
-    <button class="gender-btn" data-val="any"  onclick="setGender(this)">הפתעה</button>
+    <!-- <button class="gender-btn" data-val="any"  onclick="setGender(this)">הפתעה</button> -->
   </div>
 
   <!-- CATEGORY FILTERS -->
@@ -370,21 +371,13 @@
     <button class="filter-chip" data-filter="nature"        onclick="toggleFilter(this)">טבע</button>
   </div>
 
-  <!-- כפתור פופולריות -->
-  <div class="pop-section">
-    <span class="pop-section-label">פופולריות</span>
-    <div class="pop-ios-group">
-      <div class="pop-ios-switch" id="popIosSwitch" data-state="pop">
-        <div class="pop-ios-thumb"></div>
-        <button class="pop-ios-hit" data-val="pop"  onclick="setPopPreset('pop')"></button>
-        <button class="pop-ios-hit" data-val="mid"  onclick="setPopPreset('mid')"></button>
-        <button class="pop-ios-hit" data-val="rare" onclick="setPopPreset('rare')"></button>
-      </div>
-      <div class="pop-ios-labels">
-        <span>נפוץ</span><span>בינוני</span><span>נדיר</span>
-      </div>
-    </div>
+  <!-- כפתורי פופולריות — מוסתרים זמנית
+  <div class="filter-row">
+    <button class="filter-chip active" data-pop="pop"  onclick="setPopPreset('pop')">פופלרי</button>
+    <button class="filter-chip"        data-pop="mid"  onclick="setPopPreset('mid')">ממוצע</button>
+    <button class="filter-chip"        data-pop="rare" onclick="setPopPreset('rare')">נדיר</button>
   </div>
+  -->
 
   <!-- CARD -->
   <div class="card" id="card">
@@ -602,15 +595,16 @@ function renderLiked() {
   }).join('');
 }
 
-// ── Popularity preset ──
-var POP_PRESETS = { pop: {target:80,range:20}, mid: {target:70,range:30}, rare: {target:20,range:15} };
+// ── Popularity preset — מוסתר זמנית ──
+/* var POP_PRESETS = { pop: {target:80,range:20}, mid: {target:70,range:30}, rare: {target:20,range:15} };
 function setPopPreset(val) {
   var p = POP_PRESETS[val];
   popularityTarget = p.target;
   popularityRange  = p.range;
-  document.getElementById('popIosSwitch').dataset.state = val;
+  document.querySelectorAll('.filter-chip[data-pop]').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelector('.filter-chip[data-pop="' + val + '"]').classList.add('active');
   showRandom();
-}
+} */
 
 // ── Gender ──
 function setGender(btn) {

@@ -34,7 +34,7 @@
         <div class="gender-row">
           <button type="button" class="filter-btn" data-val="boy"  onclick="setGender(this)">בן</button>
           <button type="button" class="filter-btn" data-val="girl" onclick="setGender(this)">בת</button>
-          <button type="button" class="filter-btn" data-val="any"  onclick="setGender(this)">הפתעה</button>
+          <!-- <button type="button" class="filter-btn" data-val="any"  onclick="setGender(this)">הפתעה</button> -->
         </div>
 
         <!-- כרטיס תינוק — לחיץ להגרלה מחדש -->
@@ -60,15 +60,11 @@
 
         <!-- כפתורי פילטר — עמודה ימנית בגריד -->
         <div class="card-filters">
-          <div class="pop-vios-section">
-            <div class="pop-vios-switch" id="popVIosSwitch" data-state="pop">
-              <div class="pop-vios-thumb"></div>
-              <button class="pop-vios-hit" data-val="pop"  onclick="setPopPreset('pop')"></button>
-              <button class="pop-vios-hit" data-val="mid"  onclick="setPopPreset('mid')"></button>
-              <button class="pop-vios-hit" data-val="rare" onclick="setPopPreset('rare')"></button>
-            </div>
-            <div class="pop-vios-label" id="popVIosLabel">נפוץ</div>
-          </div>
+          <!-- כפתורי פופולריות — מוסתרים זמנית
+          <button type="button" class="filter-btn active" data-pop="pop"  onclick="setPopPreset('pop')">פופלרי</button>
+          <button type="button" class="filter-btn"        data-pop="mid"  onclick="setPopPreset('mid')">ממוצע</button>
+          <button type="button" class="filter-btn"        data-pop="rare" onclick="setPopPreset('rare')">נדיר</button>
+          -->
           <button class="filter-btn" data-filter="unisex"        onclick="toggleCardFilter(this)">יוניסקס</button>
           <button class="filter-btn" data-filter="sources"       onclick="toggleCardFilter(this)">מקורות</button>
           <button class="filter-btn" data-filter="international" onclick="toggleCardFilter(this)">חו"ל</button>
@@ -249,17 +245,16 @@ function toggleCardFilter(btn) {
   showRandomCard(gender || 'any');
 }
 
-// ── Popularity preset ──
-var POP_PRESETS  = { pop: {target:80,range:20}, mid: {target:70,range:30}, rare: {target:20,range:15} };
-var POP_LABELS   = { pop: 'נפוץ', mid: 'בינוני', rare: 'נדיר' };
+// ── Popularity preset — מוסתר זמנית ──
+/* var POP_PRESETS = { pop: {target:80,range:20}, mid: {target:70,range:30}, rare: {target:20,range:15} };
 function setPopPreset(val) {
   var p = POP_PRESETS[val];
   popularityTarget = p.target;
   popularityRange  = p.range;
-  document.getElementById('popVIosSwitch').dataset.state = val;
-  document.getElementById('popVIosLabel').textContent    = POP_LABELS[val];
+  document.querySelectorAll('.card-filters .filter-btn[data-pop]').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelector('.card-filters .filter-btn[data-pop="' + val + '"]').classList.add('active');
   showRandomCard(gender || 'any');
-}
+} */
 
 // ── Initial card ──
 (function() {
