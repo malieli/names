@@ -1,7 +1,7 @@
 @import url('./shared.css');
 
 body {
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Rubik', sans-serif;
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
@@ -111,7 +111,7 @@ nav {
   border: 1.5px solid var(--border);
   border-radius: 10px;
   background: var(--surface);
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: .9rem;
   font-weight: 600;
   color: var(--sub);
@@ -133,7 +133,7 @@ select {
   border: 1.5px solid var(--border);
   border-radius: 10px;
   background: var(--surface);
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: .93rem;
   color: var(--text);
   outline: none;
@@ -160,7 +160,7 @@ select:focus { border-color: var(--accent); }
   border-radius: 10px;
   background: var(--accent);
   color: #fff;
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
@@ -264,7 +264,7 @@ select:focus { border-color: var(--accent); }
   flex: 1; padding: 12px;
   border: 1.5px solid var(--border); border-radius: 10px;
   background: var(--surface);
-  font-family: 'Assistant', sans-serif; font-size: .88rem; font-weight: 600; color: var(--sub);
+  font-family: 'Rubik', sans-serif; font-size: .88rem; font-weight: 600; color: var(--sub);
   cursor: pointer; transition: all .15s;
 }
 .btn-again:hover { border-color: var(--text); color: var(--text); }
@@ -272,7 +272,7 @@ select:focus { border-color: var(--accent); }
   flex: 1; padding: 12px;
   border: 1.5px solid var(--border); border-radius: 10px;
   background: var(--surface);
-  font-family: 'Assistant', sans-serif; font-size: .88rem; font-weight: 600; color: var(--sub);
+  font-family: 'Rubik', sans-serif; font-size: .88rem; font-weight: 600; color: var(--sub);
   cursor: pointer; transition: all .15s;
 }
 .btn-restart:hover { border-color: var(--text); color: var(--text); }
@@ -427,7 +427,7 @@ footer {
   padding: 13px 20px;
   border: 1.5px solid var(--border);
   border-radius: 50px;
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 1rem;
   background: var(--bg);
   color: var(--text);
@@ -455,7 +455,7 @@ footer {
   border: 1.5px solid var(--accent);
   background: var(--surface);
   color: var(--accent);
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: .82rem;
   font-weight: 700;
   cursor: pointer;
@@ -734,7 +734,7 @@ footer {
   border: 1.5px solid var(--border);
   border-radius: 10px;
   background: var(--surface);
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: .82rem;
   font-weight: 600;
   color: var(--sub);
@@ -860,9 +860,9 @@ footer {
   height: 50px;
   border-radius: 50%;
   padding: 0;
-  font-size: 1.15rem;
-  font-weight: 700;
-  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #fff;
   border: 1.5px solid var(--border);
   color: var(--accent);
